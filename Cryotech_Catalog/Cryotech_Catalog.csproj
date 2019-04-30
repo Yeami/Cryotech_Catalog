@@ -55,16 +55,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewFreezer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewFreezer.Designer.cs">
+      <DependentUpon>AddNewFreezer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewFridge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewFridge.Designer.cs">
+      <DependentUpon>AddNewFridge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Device.cs" />
+    <Compile Include="Classes\Freezer.cs" />
+    <Compile Include="Classes\Fridge.cs" />
+    <Compile Include="Classes\IFeatures.cs" />
     <Compile Include="CryotechMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CryotechMainForm.Designer.cs">
       <DependentUpon>CryotechMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FridgeTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FridgeTemplate.Designer.cs">
+      <DependentUpon>FridgeTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddNewFridge.resx">
+      <DependentUpon>AddNewFridge.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CryotechMainForm.resx">
       <DependentUpon>CryotechMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FridgeTemplate.resx">
+      <DependentUpon>FridgeTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
