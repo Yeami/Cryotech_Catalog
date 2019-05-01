@@ -24,17 +24,36 @@ namespace Cryotech_Catalog.Forms
 
             NewFreezer = NewEmptyFreezer;
 
+            TitleLabel.Text = NewFreezer.TitleToString("Freezer");
+
+            ColorInfoLabel.Text = NewFreezer.Color;
+            OverallVolumeInfoLabel.Text = Convert.ToString(NewFreezer.OverallVolume) + " L";
+            ControlTypeInfoLabel.Text = Convert.ToString(NewFreezer.ControlType);
+            DisplayInfoLabel.Text = (NewFreezer.Display == true) ? "Yes" : "No";
+            DefrostSystemInfoLabel.Text = (NewFreezer.DefrostSystem == true) ? "Yes" : "No";
+            DimensionsInfoLabel.Text = NewFreezer.DimensionsToString() + " sm";
+            WeightInfoLabel.Text = Convert.ToString(NewFreezer.Weight) + " kg";
+            ProducingCountryInfoLabel.Text = NewFreezer.ProducingCountry;
+            PriceLabel.Text = Convert.ToString(NewFreezer.Price) + " UAH";
+            PriceLabel.ForeColor = Color.Red;
+            SmallFreezerPictureBox.Image = ByteArrayToImage(NewFreezer.DeviceImage);
+
+            HardFeaturesInfoLabel.Text = "";
         }
 
         private void ShowHardFeaturesLabel_Click(object sender, EventArgs e)
         {
             if (HardFeaturesLabelStatus == 0)
             {
-
+                ShowHardFeaturesLabel.Text = "Hide Hard Features";
+                HardFeaturesInfoLabel.Text = NewFreezer.HardFeaturesToString();
+                HardFeaturesLabelStatus = 1;
             }
             else if (HardFeaturesLabelStatus == 1)
             {
-
+                ShowHardFeaturesLabel.Text = "Show Hard Features";
+                HardFeaturesInfoLabel.Text = "";
+                HardFeaturesLabelStatus = 0;
             }
         }
 
@@ -51,6 +70,26 @@ namespace Cryotech_Catalog.Forms
                 Image returnImage = Image.FromStream(ms);
                 return returnImage;
             }
+        }
+
+        private void TitleLabel_MouseMove(object sender, MouseEventArgs e)
+        {
+            TitleLabel.ForeColor = Color.Violet;
+        }
+
+        private void TitleLabel_MouseLeave(object sender, EventArgs e)
+        {
+            TitleLabel.ForeColor = Color.DeepSkyBlue;
+        }
+
+        private void ShowHardFeaturesLabel_MouseMove(object sender, MouseEventArgs e)
+        {
+            ShowHardFeaturesLabel.ForeColor = Color.DeepSkyBlue;
+        }
+
+        private void ShowHardFeaturesLabel_MouseLeave(object sender, EventArgs e)
+        {
+            ShowHardFeaturesLabel.ForeColor = Color.Black;
         }
     }
 }
