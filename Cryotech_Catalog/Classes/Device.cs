@@ -59,7 +59,7 @@ namespace Cryotech_Catalog.Classes
         // IFeatures
         public int NoiseLevel { get; set; }              // Уровень шума 
         public string Refrigerant { get; set; }          // Хладагент 
-        public EnegryClassType EnegryClass { get; set; } // Класс энергопотребления 
+        public EnergyClassType EnergyClass { get; set; } // Класс энергопотребления 
 
         // Default Constructor
         public Device()
@@ -71,7 +71,7 @@ namespace Cryotech_Catalog.Classes
             string Name, string Manufacturer, string Color, string ProducingCountry, 
             bool Display, bool DefrostSystem, bool RehangingDoors, byte[] DeviceImage,
             InstallationMethodType InstallationMethod, ControlType ControlType,
-            int NoiseLevel, string Refrigerant, EnegryClassType EnegryClass)
+            int NoiseLevel, string Refrigerant, EnergyClassType EnergyClass)
         {
             // Int
             this.Price = Price;
@@ -102,8 +102,10 @@ namespace Cryotech_Catalog.Classes
             // IFeatures
             this.NoiseLevel = NoiseLevel;
             this.Refrigerant = Refrigerant;
-            this.EnegryClass = EnegryClass;
+            this.EnergyClass = EnergyClass;
         }
+
+        public abstract string HardFeaturesToString();
 
         public string TitleToString(string ObjectType)
         {
@@ -113,11 +115,6 @@ namespace Cryotech_Catalog.Classes
         public string DimensionsToString()
         {
             return this.Height + "x" + this.Width + "x" + this.Depth;
-        }
-
-        public string HardFeaturesToString()
-        {
-            return "NoiseLevel: " + this.NoiseLevel.ToString() + " dB\n" + "Refrigerant: " + this.Refrigerant + "\nEnegryClass: " + this.EnegryClass.ToString();
         }
     }
 }

@@ -71,7 +71,7 @@ namespace Cryotech_Catalog.Classes
             string Name, string Manufacturer, string Color, string ProducingCountry,
             bool Display, bool DefrostSystem, bool RehangingDoors, byte[] DeviceImage,
             InstallationMethodType InstallationMethod, ControlType ControlType,
-            int NoiseLevel, string Refrigerant, EnegryClassType EnegryClass,
+            int NoiseLevel, string Refrigerant, EnergyClassType EnergyClass,
             int CompressorsAmount, int FridgeUsefulVolume, int FreezerUsefulVolume,
             bool FreshnessZone, bool MiniBar,
             FreezerLocationType FreezerLocation, CompressorType CompressorType, FridgeType DeviceType) : base
@@ -80,7 +80,7 @@ namespace Cryotech_Catalog.Classes
             Name, Manufacturer, Color, ProducingCountry,
             Display, DefrostSystem, RehangingDoors, DeviceImage,
             InstallationMethod, ControlType,
-            NoiseLevel, Refrigerant, EnegryClass)
+            NoiseLevel, Refrigerant, EnergyClass)
         {
             // Int
             this.CompressorsAmount = CompressorsAmount;
@@ -97,5 +97,9 @@ namespace Cryotech_Catalog.Classes
             this.FreezerLocation = FreezerLocation;
         }
 
+        public override string HardFeaturesToString()
+        {
+            return "NoiseLevel: " + this.NoiseLevel.ToString() + " dB\n" + "Refrigerant: " + this.Refrigerant + "\nEnegry Class: " + this.EnergyClass.ToString();
+        }
     }
 }

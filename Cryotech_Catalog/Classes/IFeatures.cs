@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Cryotech_Catalog.Classes
 {
-    public enum EnegryClassType
+    public enum EnergyClassType
     {
         [Description("A")]
         A,
@@ -25,7 +25,7 @@ namespace Cryotech_Catalog.Classes
     {
         int NoiseLevel { get; set; }              // Уровень шума
         string Refrigerant { get; set; }          // Хладагент
-        EnegryClassType EnegryClass { get; set; } // Класс энергопотребления
+        EnergyClassType EnergyClass { get; set; } // Класс энергопотребления
 
         string HardFeaturesToString();
     }
