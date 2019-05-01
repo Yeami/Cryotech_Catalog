@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.FridgeBackgroundPanel = new MetroFramework.Controls.MetroPanel();
+            this.HardFeaturesInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.ShowHardFeaturesLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.PriceLabel = new System.Windows.Forms.Label();
             this.WeightInfoLabel = new MetroFramework.Controls.MetroLabel();
             this.DimensionsInfoLabel = new MetroFramework.Controls.MetroLabel();
             this.ControlTypeInfoLabel = new MetroFramework.Controls.MetroLabel();
@@ -45,16 +48,16 @@
             this.FreezerUsefulVolumeLabel = new MetroFramework.Controls.MetroLabel();
             this.FridgeUsefulVolumeLabel = new MetroFramework.Controls.MetroLabel();
             this.TitleLabel = new System.Windows.Forms.Label();
-            this.FridgeLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ColorLabel = new MetroFramework.Controls.MetroLabel();
-            this.PriceLabel = new System.Windows.Forms.Label();
             this.FridgeBackgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // FridgeBackgroundPanel
             // 
+            this.FridgeBackgroundPanel.Controls.Add(this.HardFeaturesInfoLabel);
+            this.FridgeBackgroundPanel.Controls.Add(this.ShowHardFeaturesLabel1);
             this.FridgeBackgroundPanel.Controls.Add(this.PriceLabel);
             this.FridgeBackgroundPanel.Controls.Add(this.WeightInfoLabel);
             this.FridgeBackgroundPanel.Controls.Add(this.DimensionsInfoLabel);
@@ -72,7 +75,6 @@
             this.FridgeBackgroundPanel.Controls.Add(this.FreezerUsefulVolumeLabel);
             this.FridgeBackgroundPanel.Controls.Add(this.FridgeUsefulVolumeLabel);
             this.FridgeBackgroundPanel.Controls.Add(this.TitleLabel);
-            this.FridgeBackgroundPanel.Controls.Add(this.FridgeLabel);
             this.FridgeBackgroundPanel.Controls.Add(this.pictureBox1);
             this.FridgeBackgroundPanel.Controls.Add(this.ColorLabel);
             this.FridgeBackgroundPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -81,11 +83,47 @@
             this.FridgeBackgroundPanel.HorizontalScrollbarSize = 10;
             this.FridgeBackgroundPanel.Location = new System.Drawing.Point(0, 0);
             this.FridgeBackgroundPanel.Name = "FridgeBackgroundPanel";
-            this.FridgeBackgroundPanel.Size = new System.Drawing.Size(806, 266);
+            this.FridgeBackgroundPanel.Size = new System.Drawing.Size(834, 268);
             this.FridgeBackgroundPanel.TabIndex = 0;
             this.FridgeBackgroundPanel.VerticalScrollbarBarColor = true;
             this.FridgeBackgroundPanel.VerticalScrollbarHighlightOnWheel = false;
             this.FridgeBackgroundPanel.VerticalScrollbarSize = 10;
+            // 
+            // HardFeaturesInfoLabel
+            // 
+            this.HardFeaturesInfoLabel.AutoSize = true;
+            this.HardFeaturesInfoLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.HardFeaturesInfoLabel.Location = new System.Drawing.Point(602, 174);
+            this.HardFeaturesInfoLabel.Name = "HardFeaturesInfoLabel";
+            this.HardFeaturesInfoLabel.Size = new System.Drawing.Size(41, 25);
+            this.HardFeaturesInfoLabel.TabIndex = 26;
+            this.HardFeaturesInfoLabel.Text = "Info";
+            // 
+            // ShowHardFeaturesLabel1
+            // 
+            this.ShowHardFeaturesLabel1.AutoSize = true;
+            this.ShowHardFeaturesLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ShowHardFeaturesLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.ShowHardFeaturesLabel1.Location = new System.Drawing.Point(602, 124);
+            this.ShowHardFeaturesLabel1.Name = "ShowHardFeaturesLabel1";
+            this.ShowHardFeaturesLabel1.Size = new System.Drawing.Size(168, 25);
+            this.ShowHardFeaturesLabel1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.ShowHardFeaturesLabel1.TabIndex = 25;
+            this.ShowHardFeaturesLabel1.Text = "Show Hard Features ";
+            this.ShowHardFeaturesLabel1.UseCustomForeColor = true;
+            this.ShowHardFeaturesLabel1.UseStyleColors = true;
+            this.ShowHardFeaturesLabel1.Click += new System.EventHandler(this.ShowHardFeaturesLabel_Click);
+            // 
+            // PriceLabel
+            // 
+            this.PriceLabel.AutoSize = true;
+            this.PriceLabel.BackColor = System.Drawing.Color.White;
+            this.PriceLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PriceLabel.Location = new System.Drawing.Point(663, 7);
+            this.PriceLabel.Name = "PriceLabel";
+            this.PriceLabel.Size = new System.Drawing.Size(164, 37);
+            this.PriceLabel.TabIndex = 24;
+            this.PriceLabel.Text = "PRICELABEL";
             // 
             // WeightInfoLabel
             // 
@@ -241,23 +279,15 @@
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.BackColor = System.Drawing.Color.White;
+            this.TitleLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TitleLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleLabel.Location = new System.Drawing.Point(93, 7);
+            this.TitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.TitleLabel.Location = new System.Drawing.Point(6, 7);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(152, 37);
             this.TitleLabel.TabIndex = 7;
             this.TitleLabel.Text = "TITLELABEL";
-            // 
-            // FridgeLabel
-            // 
-            this.FridgeLabel.AutoSize = true;
-            this.FridgeLabel.BackColor = System.Drawing.Color.White;
-            this.FridgeLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FridgeLabel.Location = new System.Drawing.Point(5, 7);
-            this.FridgeLabel.Name = "FridgeLabel";
-            this.FridgeLabel.Size = new System.Drawing.Size(91, 37);
-            this.FridgeLabel.TabIndex = 6;
-            this.FridgeLabel.Text = "Fridge";
+            this.TitleLabel.DoubleClick += new System.EventHandler(this.TitleLabel_DoubleClick);
             // 
             // pictureBox1
             // 
@@ -277,25 +307,14 @@
             this.ColorLabel.TabIndex = 4;
             this.ColorLabel.Text = "Color: ";
             // 
-            // PriceLabel
-            // 
-            this.PriceLabel.AutoSize = true;
-            this.PriceLabel.BackColor = System.Drawing.Color.White;
-            this.PriceLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PriceLabel.Location = new System.Drawing.Point(637, 7);
-            this.PriceLabel.Name = "PriceLabel";
-            this.PriceLabel.Size = new System.Drawing.Size(164, 37);
-            this.PriceLabel.TabIndex = 24;
-            this.PriceLabel.Text = "PRICELABEL";
-            // 
             // FridgeTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.FridgeBackgroundPanel);
             this.Name = "FridgeTemplate";
-            this.Size = new System.Drawing.Size(806, 266);
+            this.Size = new System.Drawing.Size(834, 268);
             this.FridgeBackgroundPanel.ResumeLayout(false);
             this.FridgeBackgroundPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -306,7 +325,6 @@
         #endregion
 
         private MetroFramework.Controls.MetroPanel FridgeBackgroundPanel;
-        private System.Windows.Forms.Label FridgeLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroLabel ColorLabel;
         private System.Windows.Forms.Label TitleLabel;
@@ -326,5 +344,7 @@
         private MetroFramework.Controls.MetroLabel FridgeUsefulVolumeInfoLabel;
         private MetroFramework.Controls.MetroLabel ColorInfoLabel;
         private System.Windows.Forms.Label PriceLabel;
+        private MetroFramework.Controls.MetroLabel ShowHardFeaturesLabel1;
+        private MetroFramework.Controls.MetroLabel HardFeaturesInfoLabel;
     }
 }

@@ -26,5 +26,7 @@ namespace Cryotech_Catalog.Classes
         int NoiseLevel { get; set; }              // Уровень шума
         string Refrigerant { get; set; }          // Хладагент
         EnegryClassType EnegryClass { get; set; } // Класс энергопотребления
+
+        string HardFeaturesToString();
     }
 }

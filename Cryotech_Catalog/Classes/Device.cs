@@ -93,14 +93,19 @@ namespace Cryotech_Catalog.Classes
             this.EnegryClass = EnegryClass;
         }
 
-        public string TitleToString()
+        public string TitleToString(string ObjectType)
         {
-            return this.Manufacturer.ToUpper() + " " + this.Name.ToUpper();
+            return ObjectType + " " + this.Manufacturer.ToUpper() + " " + this.Name.ToUpper();
         }
 
         public string DimensionsToString()
         {
             return this.Height + "x" + this.Width + "x" + this.Depth;
+        }
+
+        public string HardFeaturesToString()
+        {
+            return "NoiseLevel: " + this.NoiseLevel.ToString() + " dB\n" + "Refrigerant: " + this.Refrigerant + "\nEnegryClass: " + this.EnegryClass.ToString();
         }
     }
 }

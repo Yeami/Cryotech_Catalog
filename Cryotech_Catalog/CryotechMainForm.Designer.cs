@@ -35,6 +35,7 @@
             this.AddFridgeTile = new MetroFramework.Controls.MetroTile();
             this.SaveDataTile = new MetroFramework.Controls.MetroTile();
             this.DeviceViewPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.CompareObjectsTile = new MetroFramework.Controls.MetroTile();
             this.DeviceTabControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,9 +69,10 @@
             // AddFreezerTile
             // 
             this.AddFreezerTile.ActiveControl = null;
-            this.AddFreezerTile.Location = new System.Drawing.Point(553, 52);
+            this.AddFreezerTile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddFreezerTile.Location = new System.Drawing.Point(552, 52);
             this.AddFreezerTile.Name = "AddFreezerTile";
-            this.AddFreezerTile.Size = new System.Drawing.Size(205, 43);
+            this.AddFreezerTile.Size = new System.Drawing.Size(204, 43);
             this.AddFreezerTile.TabIndex = 3;
             this.AddFreezerTile.Text = "Add Freezer";
             this.AddFreezerTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -81,9 +83,10 @@
             // AddFridgeTile
             // 
             this.AddFridgeTile.ActiveControl = null;
+            this.AddFridgeTile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddFridgeTile.Location = new System.Drawing.Point(342, 52);
             this.AddFridgeTile.Name = "AddFridgeTile";
-            this.AddFridgeTile.Size = new System.Drawing.Size(205, 43);
+            this.AddFridgeTile.Size = new System.Drawing.Size(204, 43);
             this.AddFridgeTile.TabIndex = 4;
             this.AddFridgeTile.Text = "Add Fridge";
             this.AddFridgeTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -94,9 +97,10 @@
             // SaveDataTile
             // 
             this.SaveDataTile.ActiveControl = null;
-            this.SaveDataTile.Location = new System.Drawing.Point(764, 52);
+            this.SaveDataTile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SaveDataTile.Location = new System.Drawing.Point(762, 52);
             this.SaveDataTile.Name = "SaveDataTile";
-            this.SaveDataTile.Size = new System.Drawing.Size(205, 43);
+            this.SaveDataTile.Size = new System.Drawing.Size(204, 43);
             this.SaveDataTile.Style = MetroFramework.MetroColorStyle.Orange;
             this.SaveDataTile.TabIndex = 5;
             this.SaveDataTile.Text = "Save Data";
@@ -109,17 +113,32 @@
             // 
             this.DeviceViewPanel.AutoScroll = true;
             this.DeviceViewPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.DeviceViewPanel.Location = new System.Drawing.Point(342, 102);
+            this.DeviceViewPanel.Location = new System.Drawing.Point(339, 102);
             this.DeviceViewPanel.Name = "DeviceViewPanel";
-            this.DeviceViewPanel.Size = new System.Drawing.Size(835, 521);
+            this.DeviceViewPanel.Size = new System.Drawing.Size(840, 521);
             this.DeviceViewPanel.TabIndex = 8;
             this.DeviceViewPanel.WrapContents = false;
+            // 
+            // CompareObjectsTile
+            // 
+            this.CompareObjectsTile.ActiveControl = null;
+            this.CompareObjectsTile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CompareObjectsTile.Location = new System.Drawing.Point(972, 52);
+            this.CompareObjectsTile.Name = "CompareObjectsTile";
+            this.CompareObjectsTile.Size = new System.Drawing.Size(204, 43);
+            this.CompareObjectsTile.Style = MetroFramework.MetroColorStyle.Lime;
+            this.CompareObjectsTile.TabIndex = 9;
+            this.CompareObjectsTile.Text = "Compare";
+            this.CompareObjectsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CompareObjectsTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.CompareObjectsTile.UseSelectable = true;
             // 
             // CryotechMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 650);
+            this.Controls.Add(this.CompareObjectsTile);
             this.Controls.Add(this.DeviceViewPanel);
             this.Controls.Add(this.SaveDataTile);
             this.Controls.Add(this.AddFridgeTile);
@@ -142,6 +161,7 @@
         private MetroFramework.Controls.MetroTile AddFridgeTile;
         private MetroFramework.Controls.MetroTile SaveDataTile;
         private System.Windows.Forms.FlowLayoutPanel DeviceViewPanel;
+        private MetroFramework.Controls.MetroTile CompareObjectsTile;
     }
 }
 
