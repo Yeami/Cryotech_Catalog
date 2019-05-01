@@ -72,6 +72,12 @@
     <Compile Include="Classes\Freezer.cs" />
     <Compile Include="Classes\Fridge.cs" />
     <Compile Include="Classes\IFeatures.cs" />
+    <Compile Include="Forms\FreezerTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\FreezerTemplate.Designer.cs">
+      <DependentUpon>FreezerTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,8 +98,14 @@
     <Compile Include="Forms\ShowFridgeFullInfo.Designer.cs">
       <DependentUpon>ShowFridgeFullInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\AddNewFreezer.resx">
+      <DependentUpon>AddNewFreezer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddNewFridge.resx">
       <DependentUpon>AddNewFridge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FreezerTemplate.resx">
+      <DependentUpon>FreezerTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

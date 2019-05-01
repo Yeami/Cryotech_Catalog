@@ -25,7 +25,6 @@ namespace Cryotech_Catalog
             NewFridge = NewEmptyFridge;
 
             TitleLabel.Text = NewFridge.TitleToString("Fridge");
-            //TitleLabel.ForeColor = Color.SteelBlue;
 
             ColorInfoLabel.Text = NewFridge.Color;
             FridgeUsefulVolumeInfoLabel.Text = Convert.ToString(NewFridge.FridgeUsefulVolume) + " L";
@@ -46,13 +45,13 @@ namespace Cryotech_Catalog
         {
             if (HardFeaturesLabelStatus == 0)
             {
-                ShowHardFeaturesLabel1.Text = "Hide Hard Features";
+                ShowHardFeaturesLabel.Text = "Hide Hard Features";
                 HardFeaturesInfoLabel.Text = NewFridge.HardFeaturesToString();
                 HardFeaturesLabelStatus = 1;
             }
             else if(HardFeaturesLabelStatus == 1)
             {
-                ShowHardFeaturesLabel1.Text = "Show Hard Features";
+                ShowHardFeaturesLabel.Text = "Show Hard Features";
                 HardFeaturesInfoLabel.Text = "";
                 HardFeaturesLabelStatus = 0;
             }
@@ -71,6 +70,26 @@ namespace Cryotech_Catalog
                 Image returnImage = Image.FromStream(ms);
                 return returnImage;
             }
+        }
+
+        private void TitleLabel_MouseMove(object sender, MouseEventArgs e)
+        {
+            TitleLabel.ForeColor = Color.Violet;
+        }
+
+        private void TitleLabel_MouseLeave(object sender, EventArgs e)
+        {
+            TitleLabel.ForeColor = Color.DeepSkyBlue;
+        }
+
+        private void ShowHardFeaturesLabel_MouseMove(object sender, MouseEventArgs e)
+        {
+            ShowHardFeaturesLabel.ForeColor = Color.DeepSkyBlue;
+        }
+
+        private void ShowHardFeaturesLabel_MouseLeave(object sender, EventArgs e)
+        {
+            ShowHardFeaturesLabel.ForeColor = Color.Black;
         }
     }
 }

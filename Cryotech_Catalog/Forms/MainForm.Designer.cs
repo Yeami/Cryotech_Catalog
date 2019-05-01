@@ -70,7 +70,7 @@
             // 
             this.AddFreezerTile.ActiveControl = null;
             this.AddFreezerTile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddFreezerTile.Location = new System.Drawing.Point(552, 52);
+            this.AddFreezerTile.Location = new System.Drawing.Point(544, 52);
             this.AddFreezerTile.Name = "AddFreezerTile";
             this.AddFreezerTile.Size = new System.Drawing.Size(204, 43);
             this.AddFreezerTile.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             this.AddFridgeTile.ActiveControl = null;
             this.AddFridgeTile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddFridgeTile.Location = new System.Drawing.Point(342, 52);
+            this.AddFridgeTile.Location = new System.Drawing.Point(334, 52);
             this.AddFridgeTile.Name = "AddFridgeTile";
             this.AddFridgeTile.Size = new System.Drawing.Size(204, 43);
             this.AddFridgeTile.TabIndex = 4;
@@ -98,7 +98,7 @@
             // 
             this.SaveDataTile.ActiveControl = null;
             this.SaveDataTile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SaveDataTile.Location = new System.Drawing.Point(762, 52);
+            this.SaveDataTile.Location = new System.Drawing.Point(754, 52);
             this.SaveDataTile.Name = "SaveDataTile";
             this.SaveDataTile.Size = new System.Drawing.Size(204, 43);
             this.SaveDataTile.Style = MetroFramework.MetroColorStyle.Orange;
@@ -113,9 +113,9 @@
             // 
             this.DeviceViewPanel.AutoScroll = true;
             this.DeviceViewPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.DeviceViewPanel.Location = new System.Drawing.Point(339, 102);
+            this.DeviceViewPanel.Location = new System.Drawing.Point(331, 102);
             this.DeviceViewPanel.Name = "DeviceViewPanel";
-            this.DeviceViewPanel.Size = new System.Drawing.Size(840, 521);
+            this.DeviceViewPanel.Size = new System.Drawing.Size(885, 521);
             this.DeviceViewPanel.TabIndex = 8;
             this.DeviceViewPanel.WrapContents = false;
             // 
@@ -123,7 +123,7 @@
             // 
             this.CompareObjectsTile.ActiveControl = null;
             this.CompareObjectsTile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CompareObjectsTile.Location = new System.Drawing.Point(972, 52);
+            this.CompareObjectsTile.Location = new System.Drawing.Point(964, 52);
             this.CompareObjectsTile.Name = "CompareObjectsTile";
             this.CompareObjectsTile.Size = new System.Drawing.Size(204, 43);
             this.CompareObjectsTile.Style = MetroFramework.MetroColorStyle.Lime;
@@ -137,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 650);
+            this.ClientSize = new System.Drawing.Size(1250, 650);
             this.Controls.Add(this.CompareObjectsTile);
             this.Controls.Add(this.DeviceViewPanel);
             this.Controls.Add(this.SaveDataTile);

@@ -47,7 +47,7 @@ namespace Cryotech_Catalog
             // Extra Info GroupBox
             NewFridge.InstallationMethod = (InstallationMethodType)Enum.Parse(typeof(InstallationMethodType), InstallationMethodComboBox.GetItemText(InstallationMethodComboBox.SelectedValue));
             NewFridge.ControlType = (ControlType)Enum.Parse(typeof(ControlType), ControlTypeComboBox.GetItemText(ControlTypeComboBox.SelectedValue));
-            NewFridge.EnegryClass = (EnegryClassType)Enum.Parse(typeof(EnegryClassType), EnergyClassComboBox.GetItemText(EnergyClassComboBox.SelectedValue));
+            NewFridge.EnergyClass = (EnergyClassType)Enum.Parse(typeof(EnergyClassType), EnergyClassComboBox.GetItemText(EnergyClassComboBox.SelectedValue));
             NewFridge.NoiseLevel = Convert.ToInt32(NoiseLevelTextBox.Text);
             NewFridge.Refrigerant = RefrigerantTextBox.Text;
 
@@ -74,7 +74,6 @@ namespace Cryotech_Catalog
 
         private void UploadPictureButton_Click(object sender, EventArgs e)
         {
-
             OpenFileDialog Dialog = new OpenFileDialog();
             Dialog.Filter = "jpg files(.*jpg)|*.jpg| PNG files(.*png)|*.png| All Files(*.*)|*.*";
 
@@ -85,7 +84,6 @@ namespace Cryotech_Catalog
                 CurrentPictureInfoLabel.Text = Path.GetFileName(PictureLocation);
                 UploadedImage = Image.FromFile(PictureLocation);
             }
-
         }
 
         private byte[] ImageToByteArray(Image UploadedImage)
@@ -126,7 +124,7 @@ namespace Cryotech_Catalog
             ControlTypeComboBox.ValueMember = "value";
 
             // EnergyClass ComboBox
-            EnergyClassComboBox.DataSource = Enum.GetValues(typeof(EnegryClassType))
+            EnergyClassComboBox.DataSource = Enum.GetValues(typeof(EnergyClassType))
                 .Cast<Enum>()
                 .Select(value => new
                 {

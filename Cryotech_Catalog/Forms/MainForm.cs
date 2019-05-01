@@ -49,27 +49,29 @@ namespace Cryotech_Catalog
                 {
                     Devices.Add(NewFreezer);
                     MessageBox.Show("Freezer Added Successfully");
+                    DisplayFreezerDevice(NewFreezer);
                 }
             }
         }
 
         private void SaveDataTile_Click(object sender, EventArgs e)
         {
-            XmlSerializer formatter = new XmlSerializer(typeof(List<Device>));
+            XmlSerializer DeviceSerializer = new XmlSerializer(typeof(List<Device>));
 
-            using (FileStream fs = new FileStream("Data.xml", FileMode.OpenOrCreate))
+            using (FileStream DeviceFileStream = new FileStream("Data.xml", FileMode.OpenOrCreate))
             {
-                formatter.Serialize(fs, Devices);
+                DeviceSerializer.Serialize(DeviceFileStream, Devices);
             }
+            MessageBox.Show("Data Saved Successfully");
         }
 
         private void CryotechMainForm_Load(object sender, EventArgs e)
         {
-            using (FileStream fs = new FileStream("Data.xml", FileMode.OpenOrCreate))
-            {
-                XmlSerializer formatter = new XmlSerializer(typeof(List<Device>));
+            XmlSerializer DeviceDeserializer = new XmlSerializer(typeof(List<Device>));
 
-                Devices = (List<Device>)formatter.Deserialize(fs);
+            using (FileStream DeviceFileStream = new FileStream("Data.xml", FileMode.OpenOrCreate))
+            {
+                Devices = (List<Device>)DeviceDeserializer.Deserialize(DeviceFileStream);
 
                 foreach (var NewDevice in Devices)
                 {
@@ -81,6 +83,7 @@ namespace Cryotech_Catalog
                     else if (NewDevice.GetType() == typeof(Freezer))
                     {
                         Freezer NewFreezer = (Freezer)Convert.ChangeType(NewDevice, typeof(Freezer));
+                        DisplayFreezerDevice(NewFreezer);
                     }
                 }
             }

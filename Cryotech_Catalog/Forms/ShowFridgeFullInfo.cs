@@ -41,7 +41,7 @@ namespace Cryotech_Catalog
             ControlTypeInfoLabel.Text = Convert.ToString(NewFridge.ControlType);
             FridgeUsefulVolumeInfoLabel.Text = Convert.ToString(NewFridge.FridgeUsefulVolume) + " L";
             FreezerUsefulVolumeInfoLabel.Text = Convert.ToString(NewFridge.FreezerUsefulVolume) + " L";
-            EnergyClassInfoLabel.Text = Convert.ToString(NewFridge.EnegryClass);
+            EnergyClassInfoLabel.Text = Convert.ToString(NewFridge.EnergyClass);
             NoiseLevelInfoLabel.Text = Convert.ToString(NewFridge.NoiseLevel);
             RefrigerantInfoLabel.Text = NewFridge.Refrigerant;
 
