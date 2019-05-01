@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,9 @@ namespace Cryotech_Catalog
         public ShowFridgeFullInfo(Fridge NewFridge)
         {
             InitializeComponent();
+
+            // Image
+            FridgePictureBox.Image = ByteArrayToImage(NewFridge.DeviceImage);
 
             // Basic Info GroupBox
             ManufacturerInfoLabel.Text = NewFridge.Manufacturer;
@@ -48,6 +52,15 @@ namespace Cryotech_Catalog
             DefrostSystemInfoLabel.Text = (NewFridge.DefrostSystem == true) ? "Yes" : "No";
             FreezerLocationInfoLabel.Text = Convert.ToString(NewFridge.FreezerLocation);
             RehangingDoorsInfoLabel.Text = (NewFridge.RehangingDoors == true) ? "Yes" : "No";
+        }
+
+        private Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            using (var ms = new MemoryStream(byteArrayIn))
+            {
+                Image returnImage = Image.FromStream(ms);
+                return returnImage;
+            }
         }
     }
 }

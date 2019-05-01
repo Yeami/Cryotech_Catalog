@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cryotech_Catalog.Classes;
+using System.IO;
 
 namespace Cryotech_Catalog
 {
@@ -35,7 +36,8 @@ namespace Cryotech_Catalog
             DimensionsInfoLabel.Text = NewFridge.DimensionsToString() + " sm";
             WeightInfoLabel.Text = Convert.ToString(NewFridge.Weight) + " kg";
             PriceLabel.Text = Convert.ToString(NewFridge.Price) + " UAH";
-            PriceLabel.ForeColor = System.Drawing.Color.Red;
+            PriceLabel.ForeColor = Color.Red;
+            SmallFridgePictureBox.Image = ByteArrayToImage(NewFridge.DeviceImage);
 
             HardFeaturesInfoLabel.Text = "";
         }
@@ -60,6 +62,15 @@ namespace Cryotech_Catalog
         {
             ShowFridgeFullInfo FridgeInfoForm = new ShowFridgeFullInfo(NewFridge);
             FridgeInfoForm.Show();
+        }
+
+        private Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            using (var ms = new MemoryStream(byteArrayIn))
+            {
+                Image returnImage = Image.FromStream(ms);
+                return returnImage;
+            }
         }
     }
 }

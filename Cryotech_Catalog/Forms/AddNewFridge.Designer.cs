@@ -94,6 +94,9 @@
             this.FridgeUsefulVolumeTextBox = new MetroFramework.Controls.MetroTextBox();
             this.FridgeUsefulVolumeLabel = new MetroFramework.Controls.MetroLabel();
             this.SaveNewFridgeTile = new MetroFramework.Controls.MetroTile();
+            this.CurrentPictureLabel = new MetroFramework.Controls.MetroLabel();
+            this.UploadPictureButton = new MetroFramework.Controls.MetroButton();
+            this.CurrentPictureInfoLabel = new MetroFramework.Controls.MetroLabel();
             this.BasicInfoGroupBox.SuspendLayout();
             this.ExtraInfoGroupBox.SuspendLayout();
             this.RehangingDoorsRadioButtonsPanel.SuspendLayout();
@@ -1113,11 +1116,47 @@
             this.SaveNewFridgeTile.UseSelectable = true;
             this.SaveNewFridgeTile.Click += new System.EventHandler(this.SaveNewFridgeTile_Click);
             // 
+            // CurrentPictureLabel
+            // 
+            this.CurrentPictureLabel.AutoSize = true;
+            this.CurrentPictureLabel.Location = new System.Drawing.Point(481, 31);
+            this.CurrentPictureLabel.Name = "CurrentPictureLabel";
+            this.CurrentPictureLabel.Size = new System.Drawing.Size(100, 19);
+            this.CurrentPictureLabel.TabIndex = 31;
+            this.CurrentPictureLabel.Text = "Current Picture:";
+            // 
+            // UploadPictureButton
+            // 
+            this.UploadPictureButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UploadPictureButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.UploadPictureButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.UploadPictureButton.Location = new System.Drawing.Point(336, 29);
+            this.UploadPictureButton.Name = "UploadPictureButton";
+            this.UploadPictureButton.Size = new System.Drawing.Size(141, 23);
+            this.UploadPictureButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.UploadPictureButton.TabIndex = 32;
+            this.UploadPictureButton.Text = "Upload Picture";
+            this.UploadPictureButton.UseSelectable = true;
+            this.UploadPictureButton.UseStyleColors = true;
+            this.UploadPictureButton.Click += new System.EventHandler(this.UploadPictureButton_Click);
+            // 
+            // CurrentPictureInfoLabel
+            // 
+            this.CurrentPictureInfoLabel.AutoSize = true;
+            this.CurrentPictureInfoLabel.Location = new System.Drawing.Point(587, 31);
+            this.CurrentPictureInfoLabel.Name = "CurrentPictureInfoLabel";
+            this.CurrentPictureInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.CurrentPictureInfoLabel.TabIndex = 33;
+            this.CurrentPictureInfoLabel.Text = "Info";
+            // 
             // AddNewFridge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 430);
+            this.Controls.Add(this.CurrentPictureInfoLabel);
+            this.Controls.Add(this.UploadPictureButton);
+            this.Controls.Add(this.CurrentPictureLabel);
             this.Controls.Add(this.SaveNewFridgeTile);
             this.Controls.Add(this.FridgeInfoGroupBox);
             this.Controls.Add(this.ExtraInfoGroupBox);
@@ -1142,6 +1181,7 @@
             this.FreshnessZoneRadioButtonsPanel.ResumeLayout(false);
             this.FreshnessZoneRadioButtonsPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1213,5 +1253,8 @@
         private MetroFramework.Controls.MetroPanel DefrostSystemRadioButtonsPanel;
         private MetroFramework.Controls.MetroPanel MiniBarRadioButtonsPanel;
         private MetroFramework.Controls.MetroPanel FreshnessZoneRadioButtonsPanel;
+        private MetroFramework.Controls.MetroLabel CurrentPictureLabel;
+        private MetroFramework.Controls.MetroButton UploadPictureButton;
+        private MetroFramework.Controls.MetroLabel CurrentPictureInfoLabel;
     }
 }

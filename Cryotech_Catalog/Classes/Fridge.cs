@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,14 +47,17 @@ namespace Cryotech_Catalog.Classes
 
     public class Fridge : Device
     {
-        public int CompressorsAmount { get; set; }          // Количество компрессоров *
-        public int FridgeUsefulVolume { get; set; }         // Полезный объем холодильной камеры *
-        public int FreezerUsefulVolume { get; set; }        // Полезный объем морозильной камеры *
+        // Int
+        public int CompressorsAmount { get; set; }          // Количество компрессоров 
+        public int FridgeUsefulVolume { get; set; }         // Полезный объем холодильной камеры 
+        public int FreezerUsefulVolume { get; set; }        // Полезный объем морозильной камеры 
 
+        // Bool
         public bool FreshnessZone { get; set; }             // Зона свежести
         public bool MiniBar { get; set; }                   // Мини-бар
 
-        public FridgeType DeviceType { get; set; }               // Тип устройства *
+        // Enum
+        public FridgeType DeviceType { get; set; }               // Тип устройства 
         public CompressorType CompressorType { get; set; }       // Тип компрессора
         public FreezerLocationType FreezerLocation { get; set; } // Расположение морозильной камеры
 
@@ -64,7 +69,7 @@ namespace Cryotech_Catalog.Classes
         public Fridge
             (int Price, int OverallVolume, int Weight, int Height, int Width, int Depth,
             string Name, string Manufacturer, string Color, string ProducingCountry,
-            bool Display, bool DefrostSystem, bool RehangingDoors,
+            bool Display, bool DefrostSystem, bool RehangingDoors, byte[] DeviceImage,
             InstallationMethodType InstallationMethod, ControlType ControlType,
             int NoiseLevel, string Refrigerant, EnegryClassType EnegryClass,
             int CompressorsAmount, int FridgeUsefulVolume, int FreezerUsefulVolume,
@@ -73,7 +78,7 @@ namespace Cryotech_Catalog.Classes
             
             (Price, OverallVolume, Weight, Height, Width, Depth,
             Name, Manufacturer, Color, ProducingCountry,
-            Display, DefrostSystem, RehangingDoors,
+            Display, DefrostSystem, RehangingDoors, DeviceImage,
             InstallationMethod, ControlType,
             NoiseLevel, Refrigerant, EnegryClass)
         {

@@ -48,10 +48,10 @@
             this.FreezerUsefulVolumeLabel = new MetroFramework.Controls.MetroLabel();
             this.FridgeUsefulVolumeLabel = new MetroFramework.Controls.MetroLabel();
             this.TitleLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.SmallFridgePictureBox = new System.Windows.Forms.PictureBox();
             this.ColorLabel = new MetroFramework.Controls.MetroLabel();
             this.FridgeBackgroundPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SmallFridgePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // FridgeBackgroundPanel
@@ -75,7 +75,7 @@
             this.FridgeBackgroundPanel.Controls.Add(this.FreezerUsefulVolumeLabel);
             this.FridgeBackgroundPanel.Controls.Add(this.FridgeUsefulVolumeLabel);
             this.FridgeBackgroundPanel.Controls.Add(this.TitleLabel);
-            this.FridgeBackgroundPanel.Controls.Add(this.pictureBox1);
+            this.FridgeBackgroundPanel.Controls.Add(this.SmallFridgePictureBox);
             this.FridgeBackgroundPanel.Controls.Add(this.ColorLabel);
             this.FridgeBackgroundPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FridgeBackgroundPanel.HorizontalScrollbarBarColor = true;
@@ -289,13 +289,14 @@
             this.TitleLabel.Text = "TITLELABEL";
             this.TitleLabel.DoubleClick += new System.EventHandler(this.TitleLabel_DoubleClick);
             // 
-            // pictureBox1
+            // SmallFridgePictureBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 50);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.SmallFridgePictureBox.Location = new System.Drawing.Point(13, 50);
+            this.SmallFridgePictureBox.Name = "SmallFridgePictureBox";
+            this.SmallFridgePictureBox.Size = new System.Drawing.Size(200, 200);
+            this.SmallFridgePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SmallFridgePictureBox.TabIndex = 5;
+            this.SmallFridgePictureBox.TabStop = false;
             // 
             // ColorLabel
             // 
@@ -317,7 +318,7 @@
             this.Size = new System.Drawing.Size(834, 268);
             this.FridgeBackgroundPanel.ResumeLayout(false);
             this.FridgeBackgroundPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SmallFridgePictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -325,7 +326,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroPanel FridgeBackgroundPanel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox SmallFridgePictureBox;
         private MetroFramework.Controls.MetroLabel ColorLabel;
         private System.Windows.Forms.Label TitleLabel;
         private MetroFramework.Controls.MetroLabel FridgeTypeLabel;

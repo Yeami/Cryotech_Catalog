@@ -147,6 +147,7 @@
             this.MaximizeBox = false;
             this.Name = "CryotechMainForm";
             this.Text = "Cryotech Catalog";
+            this.Load += new System.EventHandler(this.CryotechMainForm_Load);
             this.DeviceTabControl.ResumeLayout(false);
             this.ResumeLayout(false);
 

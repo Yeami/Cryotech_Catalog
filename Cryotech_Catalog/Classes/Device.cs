@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,31 +23,38 @@ namespace Cryotech_Catalog.Classes
         Mechanical,
         [Description("Electronic")]
         Electronic
-        //[Description("Electronically Mechanical")]
-        //ElectronicallyMechanical
     }
 
+    [Serializable()]
+    [System.Xml.Serialization.XmlInclude(typeof(Fridge))]
+    [System.Xml.Serialization.XmlInclude(typeof(Freezer))]
     public abstract class Device : IFeatures
     {
-        public int Price { get; set; }               // Цена *
+        // Int
+        public int Price { get; set; }               // Цена 
         public int OverallVolume { get; set; }       // Общий объем 
-        public int Weight { get; set; }              // Вес *
-        public int Height { get; set; }              // Высота *
-        public int Width { get; set; }               // Ширина *
-        public int Depth { get; set; }               // Глубина *
+        public int Weight { get; set; }              // Вес 
+        public int Height { get; set; }              // Высота 
+        public int Width { get; set; }               // Ширина 
+        public int Depth { get; set; }               // Глубина 
 
-        public string Name { get; set; }             // Название *
-        public string Manufacturer { get; set; }     // Производитель *
-        public string Color { get; set; }            // Цвет *
+        // String
+        public string Name { get; set; }             // Название 
+        public string Manufacturer { get; set; }     // Производитель 
+        public string Color { get; set; }            // Цвет 
         public string ProducingCountry { get; set; } // Страна-производитель 
 
+        // Bool
         public bool Display { get; set; }            // Дисплей 
         public bool DefrostSystem { get; set; }      // Система разморозки 
         public bool RehangingDoors { get; set; }     // Перенавешивание дверей 
 
+        // Image
+        public byte[] DeviceImage { get; set; }
+
         // Enums
         public InstallationMethodType InstallationMethod { get; set; } // Способ установки 
-        public ControlType ControlType { get; set; }                   // Тип управления *
+        public ControlType ControlType { get; set; }                   // Тип управления 
 
         // IFeatures
         public int NoiseLevel { get; set; }              // Уровень шума 
@@ -60,7 +69,7 @@ namespace Cryotech_Catalog.Classes
         public Device
             (int Price, int OverallVolume, int Weight, int Height, int Width, int Depth,
             string Name, string Manufacturer, string Color, string ProducingCountry, 
-            bool Display, bool DefrostSystem, bool RehangingDoors,
+            bool Display, bool DefrostSystem, bool RehangingDoors, byte[] DeviceImage,
             InstallationMethodType InstallationMethod, ControlType ControlType,
             int NoiseLevel, string Refrigerant, EnegryClassType EnegryClass)
         {
@@ -82,6 +91,9 @@ namespace Cryotech_Catalog.Classes
             this.Display = Display;
             this.DefrostSystem = DefrostSystem;
             this.RehangingDoors = RehangingDoors;
+
+            // Image
+            this.DeviceImage = DeviceImage;
 
             // Enums
             this.InstallationMethod = InstallationMethod;

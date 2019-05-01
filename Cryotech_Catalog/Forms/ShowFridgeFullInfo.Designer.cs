@@ -56,34 +56,34 @@
             this.FreezerLocationLabel = new MetroFramework.Controls.MetroLabel();
             this.FridgeUsefulVolumeLabel = new MetroFramework.Controls.MetroLabel();
             this.BasicInfoGroupBox = new System.Windows.Forms.GroupBox();
-            this.ExtraInfoGroupBox = new System.Windows.Forms.GroupBox();
-            this.FridgeFeaturesInfoGroupBox = new System.Windows.Forms.GroupBox();
-            this.ManufacturerInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.NameInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.PriceInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.OverallVolumeInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.WeightInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.HeightInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.WidthInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.DepthInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.ColorInfoLabel = new MetroFramework.Controls.MetroLabel();
             this.ProducingCountryInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.MiniBarInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.DisplayInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.FreshnessZoneInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.DefrostSystemInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.FreezerLocationInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.RehangingDoorsInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.CompressorTypeInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.CompressorsAmountInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.InstallationMethodInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.DeviceTypeInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.ControlTypeInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.FridgeUsefulVolumeInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.FreezerUsefulVolumeInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.EnergyClassInfoLabel = new MetroFramework.Controls.MetroLabel();
-            this.NoiseLevelInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.ColorInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.DepthInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.WidthInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.HeightInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.WeightInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.OverallVolumeInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.PriceInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.NameInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.ManufacturerInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.ExtraInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.RefrigerantInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.NoiseLevelInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.EnergyClassInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.FreezerUsefulVolumeInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.FridgeUsefulVolumeInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.ControlTypeInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.DeviceTypeInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.InstallationMethodInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.CompressorsAmountInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.CompressorTypeInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.FridgeFeaturesInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.RehangingDoorsInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.FreezerLocationInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.DefrostSystemInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.FreshnessZoneInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.DisplayInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.MiniBarInfoLabel = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.FridgePictureBox)).BeginInit();
             this.BasicInfoGroupBox.SuspendLayout();
             this.ExtraInfoGroupBox.SuspendLayout();
@@ -95,6 +95,7 @@
             this.FridgePictureBox.Location = new System.Drawing.Point(23, 63);
             this.FridgePictureBox.Name = "FridgePictureBox";
             this.FridgePictureBox.Size = new System.Drawing.Size(200, 400);
+            this.FridgePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.FridgePictureBox.TabIndex = 0;
             this.FridgePictureBox.TabStop = false;
             // 
@@ -191,7 +192,7 @@
             // DefrostSystemLabel
             // 
             this.DefrostSystemLabel.AutoSize = true;
-            this.DefrostSystemLabel.Location = new System.Drawing.Point(313, 16);
+            this.DefrostSystemLabel.Location = new System.Drawing.Point(312, 16);
             this.DefrostSystemLabel.Name = "DefrostSystemLabel";
             this.DefrostSystemLabel.Size = new System.Drawing.Size(99, 19);
             this.DefrostSystemLabel.TabIndex = 32;
@@ -209,7 +210,7 @@
             // RehangingDoorsLabel
             // 
             this.RehangingDoorsLabel.AutoSize = true;
-            this.RehangingDoorsLabel.Location = new System.Drawing.Point(313, 71);
+            this.RehangingDoorsLabel.Location = new System.Drawing.Point(312, 71);
             this.RehangingDoorsLabel.Name = "RehangingDoorsLabel";
             this.RehangingDoorsLabel.Size = new System.Drawing.Size(113, 19);
             this.RehangingDoorsLabel.TabIndex = 33;
@@ -317,7 +318,7 @@
             // FreezerLocationLabel
             // 
             this.FreezerLocationLabel.AutoSize = true;
-            this.FreezerLocationLabel.Location = new System.Drawing.Point(313, 45);
+            this.FreezerLocationLabel.Location = new System.Drawing.Point(312, 45);
             this.FreezerLocationLabel.Name = "FreezerLocationLabel";
             this.FreezerLocationLabel.Size = new System.Drawing.Size(109, 19);
             this.FreezerLocationLabel.TabIndex = 43;
@@ -360,6 +361,96 @@
             this.BasicInfoGroupBox.TabIndex = 48;
             this.BasicInfoGroupBox.TabStop = false;
             // 
+            // ProducingCountryInfoLabel
+            // 
+            this.ProducingCountryInfoLabel.AutoSize = true;
+            this.ProducingCountryInfoLabel.Location = new System.Drawing.Point(135, 277);
+            this.ProducingCountryInfoLabel.Name = "ProducingCountryInfoLabel";
+            this.ProducingCountryInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.ProducingCountryInfoLabel.TabIndex = 38;
+            this.ProducingCountryInfoLabel.Text = "Info";
+            // 
+            // ColorInfoLabel
+            // 
+            this.ColorInfoLabel.AutoSize = true;
+            this.ColorInfoLabel.Location = new System.Drawing.Point(58, 248);
+            this.ColorInfoLabel.Name = "ColorInfoLabel";
+            this.ColorInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.ColorInfoLabel.TabIndex = 37;
+            this.ColorInfoLabel.Text = "Info";
+            // 
+            // DepthInfoLabel
+            // 
+            this.DepthInfoLabel.AutoSize = true;
+            this.DepthInfoLabel.Location = new System.Drawing.Point(59, 219);
+            this.DepthInfoLabel.Name = "DepthInfoLabel";
+            this.DepthInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.DepthInfoLabel.TabIndex = 36;
+            this.DepthInfoLabel.Text = "Info";
+            // 
+            // WidthInfoLabel
+            // 
+            this.WidthInfoLabel.AutoSize = true;
+            this.WidthInfoLabel.Location = new System.Drawing.Point(59, 190);
+            this.WidthInfoLabel.Name = "WidthInfoLabel";
+            this.WidthInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.WidthInfoLabel.TabIndex = 35;
+            this.WidthInfoLabel.Text = "Info";
+            // 
+            // HeightInfoLabel
+            // 
+            this.HeightInfoLabel.AutoSize = true;
+            this.HeightInfoLabel.Location = new System.Drawing.Point(62, 161);
+            this.HeightInfoLabel.Name = "HeightInfoLabel";
+            this.HeightInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.HeightInfoLabel.TabIndex = 34;
+            this.HeightInfoLabel.Text = "Info";
+            // 
+            // WeightInfoLabel
+            // 
+            this.WeightInfoLabel.AutoSize = true;
+            this.WeightInfoLabel.Location = new System.Drawing.Point(65, 132);
+            this.WeightInfoLabel.Name = "WeightInfoLabel";
+            this.WeightInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.WeightInfoLabel.TabIndex = 33;
+            this.WeightInfoLabel.Text = "Info";
+            // 
+            // OverallVolumeInfoLabel
+            // 
+            this.OverallVolumeInfoLabel.AutoSize = true;
+            this.OverallVolumeInfoLabel.Location = new System.Drawing.Point(114, 103);
+            this.OverallVolumeInfoLabel.Name = "OverallVolumeInfoLabel";
+            this.OverallVolumeInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.OverallVolumeInfoLabel.TabIndex = 32;
+            this.OverallVolumeInfoLabel.Text = "Info";
+            // 
+            // PriceInfoLabel
+            // 
+            this.PriceInfoLabel.AutoSize = true;
+            this.PriceInfoLabel.Location = new System.Drawing.Point(53, 74);
+            this.PriceInfoLabel.Name = "PriceInfoLabel";
+            this.PriceInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.PriceInfoLabel.TabIndex = 31;
+            this.PriceInfoLabel.Text = "Info";
+            // 
+            // NameInfoLabel
+            // 
+            this.NameInfoLabel.AutoSize = true;
+            this.NameInfoLabel.Location = new System.Drawing.Point(60, 45);
+            this.NameInfoLabel.Name = "NameInfoLabel";
+            this.NameInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.NameInfoLabel.TabIndex = 30;
+            this.NameInfoLabel.Text = "Info";
+            // 
+            // ManufacturerInfoLabel
+            // 
+            this.ManufacturerInfoLabel.AutoSize = true;
+            this.ManufacturerInfoLabel.Location = new System.Drawing.Point(103, 16);
+            this.ManufacturerInfoLabel.Name = "ManufacturerInfoLabel";
+            this.ManufacturerInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.ManufacturerInfoLabel.TabIndex = 29;
+            this.ManufacturerInfoLabel.Text = "Info";
+            // 
             // ExtraInfoGroupBox
             // 
             this.ExtraInfoGroupBox.Controls.Add(this.RefrigerantInfoLabel);
@@ -388,6 +479,96 @@
             this.ExtraInfoGroupBox.TabIndex = 49;
             this.ExtraInfoGroupBox.TabStop = false;
             // 
+            // RefrigerantInfoLabel
+            // 
+            this.RefrigerantInfoLabel.AutoSize = true;
+            this.RefrigerantInfoLabel.Location = new System.Drawing.Point(89, 277);
+            this.RefrigerantInfoLabel.Name = "RefrigerantInfoLabel";
+            this.RefrigerantInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.RefrigerantInfoLabel.TabIndex = 54;
+            this.RefrigerantInfoLabel.Text = "Info";
+            // 
+            // NoiseLevelInfoLabel
+            // 
+            this.NoiseLevelInfoLabel.AutoSize = true;
+            this.NoiseLevelInfoLabel.Location = new System.Drawing.Point(90, 248);
+            this.NoiseLevelInfoLabel.Name = "NoiseLevelInfoLabel";
+            this.NoiseLevelInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.NoiseLevelInfoLabel.TabIndex = 53;
+            this.NoiseLevelInfoLabel.Text = "Info";
+            // 
+            // EnergyClassInfoLabel
+            // 
+            this.EnergyClassInfoLabel.AutoSize = true;
+            this.EnergyClassInfoLabel.Location = new System.Drawing.Point(98, 219);
+            this.EnergyClassInfoLabel.Name = "EnergyClassInfoLabel";
+            this.EnergyClassInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.EnergyClassInfoLabel.TabIndex = 52;
+            this.EnergyClassInfoLabel.Text = "Info";
+            // 
+            // FreezerUsefulVolumeInfoLabel
+            // 
+            this.FreezerUsefulVolumeInfoLabel.AutoSize = true;
+            this.FreezerUsefulVolumeInfoLabel.Location = new System.Drawing.Point(155, 190);
+            this.FreezerUsefulVolumeInfoLabel.Name = "FreezerUsefulVolumeInfoLabel";
+            this.FreezerUsefulVolumeInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.FreezerUsefulVolumeInfoLabel.TabIndex = 51;
+            this.FreezerUsefulVolumeInfoLabel.Text = "Info";
+            // 
+            // FridgeUsefulVolumeInfoLabel
+            // 
+            this.FridgeUsefulVolumeInfoLabel.AutoSize = true;
+            this.FridgeUsefulVolumeInfoLabel.Location = new System.Drawing.Point(149, 161);
+            this.FridgeUsefulVolumeInfoLabel.Name = "FridgeUsefulVolumeInfoLabel";
+            this.FridgeUsefulVolumeInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.FridgeUsefulVolumeInfoLabel.TabIndex = 50;
+            this.FridgeUsefulVolumeInfoLabel.Text = "Info";
+            // 
+            // ControlTypeInfoLabel
+            // 
+            this.ControlTypeInfoLabel.AutoSize = true;
+            this.ControlTypeInfoLabel.Location = new System.Drawing.Point(99, 132);
+            this.ControlTypeInfoLabel.Name = "ControlTypeInfoLabel";
+            this.ControlTypeInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.ControlTypeInfoLabel.TabIndex = 49;
+            this.ControlTypeInfoLabel.Text = "Info";
+            // 
+            // DeviceTypeInfoLabel
+            // 
+            this.DeviceTypeInfoLabel.AutoSize = true;
+            this.DeviceTypeInfoLabel.Location = new System.Drawing.Point(93, 103);
+            this.DeviceTypeInfoLabel.Name = "DeviceTypeInfoLabel";
+            this.DeviceTypeInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.DeviceTypeInfoLabel.TabIndex = 48;
+            this.DeviceTypeInfoLabel.Text = "Info";
+            // 
+            // InstallationMethodInfoLabel
+            // 
+            this.InstallationMethodInfoLabel.AutoSize = true;
+            this.InstallationMethodInfoLabel.Location = new System.Drawing.Point(135, 74);
+            this.InstallationMethodInfoLabel.Name = "InstallationMethodInfoLabel";
+            this.InstallationMethodInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.InstallationMethodInfoLabel.TabIndex = 47;
+            this.InstallationMethodInfoLabel.Text = "Info";
+            // 
+            // CompressorsAmountInfoLabel
+            // 
+            this.CompressorsAmountInfoLabel.AutoSize = true;
+            this.CompressorsAmountInfoLabel.Location = new System.Drawing.Point(152, 45);
+            this.CompressorsAmountInfoLabel.Name = "CompressorsAmountInfoLabel";
+            this.CompressorsAmountInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.CompressorsAmountInfoLabel.TabIndex = 46;
+            this.CompressorsAmountInfoLabel.Text = "Info";
+            // 
+            // CompressorTypeInfoLabel
+            // 
+            this.CompressorTypeInfoLabel.AutoSize = true;
+            this.CompressorTypeInfoLabel.Location = new System.Drawing.Point(127, 16);
+            this.CompressorTypeInfoLabel.Name = "CompressorTypeInfoLabel";
+            this.CompressorTypeInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.CompressorTypeInfoLabel.TabIndex = 45;
+            this.CompressorTypeInfoLabel.Text = "Info";
+            // 
             // FridgeFeaturesInfoGroupBox
             // 
             this.FridgeFeaturesInfoGroupBox.Controls.Add(this.RehangingDoorsInfoLabel);
@@ -402,119 +583,38 @@
             this.FridgeFeaturesInfoGroupBox.Controls.Add(this.MiniBarLabel);
             this.FridgeFeaturesInfoGroupBox.Controls.Add(this.DefrostSystemLabel);
             this.FridgeFeaturesInfoGroupBox.Controls.Add(this.FreshnessZoneLabel);
-            this.FridgeFeaturesInfoGroupBox.Location = new System.Drawing.Point(230, 365);
+            this.FridgeFeaturesInfoGroupBox.Location = new System.Drawing.Point(231, 365);
             this.FridgeFeaturesInfoGroupBox.Name = "FridgeFeaturesInfoGroupBox";
-            this.FridgeFeaturesInfoGroupBox.Size = new System.Drawing.Size(605, 100);
+            this.FridgeFeaturesInfoGroupBox.Size = new System.Drawing.Size(604, 100);
             this.FridgeFeaturesInfoGroupBox.TabIndex = 50;
             this.FridgeFeaturesInfoGroupBox.TabStop = false;
             // 
-            // ManufacturerInfoLabel
+            // RehangingDoorsInfoLabel
             // 
-            this.ManufacturerInfoLabel.AutoSize = true;
-            this.ManufacturerInfoLabel.Location = new System.Drawing.Point(103, 16);
-            this.ManufacturerInfoLabel.Name = "ManufacturerInfoLabel";
-            this.ManufacturerInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.ManufacturerInfoLabel.TabIndex = 29;
-            this.ManufacturerInfoLabel.Text = "Info";
+            this.RehangingDoorsInfoLabel.AutoSize = true;
+            this.RehangingDoorsInfoLabel.Location = new System.Drawing.Point(431, 71);
+            this.RehangingDoorsInfoLabel.Name = "RehangingDoorsInfoLabel";
+            this.RehangingDoorsInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.RehangingDoorsInfoLabel.TabIndex = 49;
+            this.RehangingDoorsInfoLabel.Text = "Info";
             // 
-            // NameInfoLabel
+            // FreezerLocationInfoLabel
             // 
-            this.NameInfoLabel.AutoSize = true;
-            this.NameInfoLabel.Location = new System.Drawing.Point(60, 45);
-            this.NameInfoLabel.Name = "NameInfoLabel";
-            this.NameInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.NameInfoLabel.TabIndex = 30;
-            this.NameInfoLabel.Text = "Info";
+            this.FreezerLocationInfoLabel.AutoSize = true;
+            this.FreezerLocationInfoLabel.Location = new System.Drawing.Point(427, 45);
+            this.FreezerLocationInfoLabel.Name = "FreezerLocationInfoLabel";
+            this.FreezerLocationInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.FreezerLocationInfoLabel.TabIndex = 48;
+            this.FreezerLocationInfoLabel.Text = "Info";
             // 
-            // PriceInfoLabel
+            // DefrostSystemInfoLabel
             // 
-            this.PriceInfoLabel.AutoSize = true;
-            this.PriceInfoLabel.Location = new System.Drawing.Point(53, 74);
-            this.PriceInfoLabel.Name = "PriceInfoLabel";
-            this.PriceInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.PriceInfoLabel.TabIndex = 31;
-            this.PriceInfoLabel.Text = "Info";
-            // 
-            // OverallVolumeInfoLabel
-            // 
-            this.OverallVolumeInfoLabel.AutoSize = true;
-            this.OverallVolumeInfoLabel.Location = new System.Drawing.Point(114, 103);
-            this.OverallVolumeInfoLabel.Name = "OverallVolumeInfoLabel";
-            this.OverallVolumeInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.OverallVolumeInfoLabel.TabIndex = 32;
-            this.OverallVolumeInfoLabel.Text = "Info";
-            // 
-            // WeightInfoLabel
-            // 
-            this.WeightInfoLabel.AutoSize = true;
-            this.WeightInfoLabel.Location = new System.Drawing.Point(65, 132);
-            this.WeightInfoLabel.Name = "WeightInfoLabel";
-            this.WeightInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.WeightInfoLabel.TabIndex = 33;
-            this.WeightInfoLabel.Text = "Info";
-            // 
-            // HeightInfoLabel
-            // 
-            this.HeightInfoLabel.AutoSize = true;
-            this.HeightInfoLabel.Location = new System.Drawing.Point(62, 161);
-            this.HeightInfoLabel.Name = "HeightInfoLabel";
-            this.HeightInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.HeightInfoLabel.TabIndex = 34;
-            this.HeightInfoLabel.Text = "Info";
-            // 
-            // WidthInfoLabel
-            // 
-            this.WidthInfoLabel.AutoSize = true;
-            this.WidthInfoLabel.Location = new System.Drawing.Point(59, 190);
-            this.WidthInfoLabel.Name = "WidthInfoLabel";
-            this.WidthInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.WidthInfoLabel.TabIndex = 35;
-            this.WidthInfoLabel.Text = "Info";
-            // 
-            // DepthInfoLabel
-            // 
-            this.DepthInfoLabel.AutoSize = true;
-            this.DepthInfoLabel.Location = new System.Drawing.Point(59, 219);
-            this.DepthInfoLabel.Name = "DepthInfoLabel";
-            this.DepthInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.DepthInfoLabel.TabIndex = 36;
-            this.DepthInfoLabel.Text = "Info";
-            // 
-            // ColorInfoLabel
-            // 
-            this.ColorInfoLabel.AutoSize = true;
-            this.ColorInfoLabel.Location = new System.Drawing.Point(58, 248);
-            this.ColorInfoLabel.Name = "ColorInfoLabel";
-            this.ColorInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.ColorInfoLabel.TabIndex = 37;
-            this.ColorInfoLabel.Text = "Info";
-            // 
-            // ProducingCountryInfoLabel
-            // 
-            this.ProducingCountryInfoLabel.AutoSize = true;
-            this.ProducingCountryInfoLabel.Location = new System.Drawing.Point(135, 277);
-            this.ProducingCountryInfoLabel.Name = "ProducingCountryInfoLabel";
-            this.ProducingCountryInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.ProducingCountryInfoLabel.TabIndex = 38;
-            this.ProducingCountryInfoLabel.Text = "Info";
-            // 
-            // MiniBarInfoLabel
-            // 
-            this.MiniBarInfoLabel.AutoSize = true;
-            this.MiniBarInfoLabel.Location = new System.Drawing.Point(74, 45);
-            this.MiniBarInfoLabel.Name = "MiniBarInfoLabel";
-            this.MiniBarInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.MiniBarInfoLabel.TabIndex = 44;
-            this.MiniBarInfoLabel.Text = "Info";
-            // 
-            // DisplayInfoLabel
-            // 
-            this.DisplayInfoLabel.AutoSize = true;
-            this.DisplayInfoLabel.Location = new System.Drawing.Point(65, 16);
-            this.DisplayInfoLabel.Name = "DisplayInfoLabel";
-            this.DisplayInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.DisplayInfoLabel.TabIndex = 45;
-            this.DisplayInfoLabel.Text = "Info";
+            this.DefrostSystemInfoLabel.AutoSize = true;
+            this.DefrostSystemInfoLabel.Location = new System.Drawing.Point(417, 16);
+            this.DefrostSystemInfoLabel.Name = "DefrostSystemInfoLabel";
+            this.DefrostSystemInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.DefrostSystemInfoLabel.TabIndex = 47;
+            this.DefrostSystemInfoLabel.Text = "Info";
             // 
             // FreshnessZoneInfoLabel
             // 
@@ -525,128 +625,29 @@
             this.FreshnessZoneInfoLabel.TabIndex = 46;
             this.FreshnessZoneInfoLabel.Text = "Info";
             // 
-            // DefrostSystemInfoLabel
+            // DisplayInfoLabel
             // 
-            this.DefrostSystemInfoLabel.AutoSize = true;
-            this.DefrostSystemInfoLabel.Location = new System.Drawing.Point(418, 16);
-            this.DefrostSystemInfoLabel.Name = "DefrostSystemInfoLabel";
-            this.DefrostSystemInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.DefrostSystemInfoLabel.TabIndex = 47;
-            this.DefrostSystemInfoLabel.Text = "Info";
+            this.DisplayInfoLabel.AutoSize = true;
+            this.DisplayInfoLabel.Location = new System.Drawing.Point(65, 16);
+            this.DisplayInfoLabel.Name = "DisplayInfoLabel";
+            this.DisplayInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.DisplayInfoLabel.TabIndex = 45;
+            this.DisplayInfoLabel.Text = "Info";
             // 
-            // FreezerLocationInfoLabel
+            // MiniBarInfoLabel
             // 
-            this.FreezerLocationInfoLabel.AutoSize = true;
-            this.FreezerLocationInfoLabel.Location = new System.Drawing.Point(428, 45);
-            this.FreezerLocationInfoLabel.Name = "FreezerLocationInfoLabel";
-            this.FreezerLocationInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.FreezerLocationInfoLabel.TabIndex = 48;
-            this.FreezerLocationInfoLabel.Text = "Info";
-            // 
-            // RehangingDoorsInfoLabel
-            // 
-            this.RehangingDoorsInfoLabel.AutoSize = true;
-            this.RehangingDoorsInfoLabel.Location = new System.Drawing.Point(432, 71);
-            this.RehangingDoorsInfoLabel.Name = "RehangingDoorsInfoLabel";
-            this.RehangingDoorsInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.RehangingDoorsInfoLabel.TabIndex = 49;
-            this.RehangingDoorsInfoLabel.Text = "Info";
-            // 
-            // CompressorTypeInfoLabel
-            // 
-            this.CompressorTypeInfoLabel.AutoSize = true;
-            this.CompressorTypeInfoLabel.Location = new System.Drawing.Point(127, 16);
-            this.CompressorTypeInfoLabel.Name = "CompressorTypeInfoLabel";
-            this.CompressorTypeInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.CompressorTypeInfoLabel.TabIndex = 45;
-            this.CompressorTypeInfoLabel.Text = "Info";
-            // 
-            // CompressorsAmountInfoLabel
-            // 
-            this.CompressorsAmountInfoLabel.AutoSize = true;
-            this.CompressorsAmountInfoLabel.Location = new System.Drawing.Point(152, 45);
-            this.CompressorsAmountInfoLabel.Name = "CompressorsAmountInfoLabel";
-            this.CompressorsAmountInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.CompressorsAmountInfoLabel.TabIndex = 46;
-            this.CompressorsAmountInfoLabel.Text = "Info";
-            // 
-            // InstallationMethodInfoLabel
-            // 
-            this.InstallationMethodInfoLabel.AutoSize = true;
-            this.InstallationMethodInfoLabel.Location = new System.Drawing.Point(135, 74);
-            this.InstallationMethodInfoLabel.Name = "InstallationMethodInfoLabel";
-            this.InstallationMethodInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.InstallationMethodInfoLabel.TabIndex = 47;
-            this.InstallationMethodInfoLabel.Text = "Info";
-            // 
-            // DeviceTypeInfoLabel
-            // 
-            this.DeviceTypeInfoLabel.AutoSize = true;
-            this.DeviceTypeInfoLabel.Location = new System.Drawing.Point(93, 103);
-            this.DeviceTypeInfoLabel.Name = "DeviceTypeInfoLabel";
-            this.DeviceTypeInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.DeviceTypeInfoLabel.TabIndex = 48;
-            this.DeviceTypeInfoLabel.Text = "Info";
-            // 
-            // ControlTypeInfoLabel
-            // 
-            this.ControlTypeInfoLabel.AutoSize = true;
-            this.ControlTypeInfoLabel.Location = new System.Drawing.Point(99, 132);
-            this.ControlTypeInfoLabel.Name = "ControlTypeInfoLabel";
-            this.ControlTypeInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.ControlTypeInfoLabel.TabIndex = 49;
-            this.ControlTypeInfoLabel.Text = "Info";
-            // 
-            // FridgeUsefulVolumeInfoLabel
-            // 
-            this.FridgeUsefulVolumeInfoLabel.AutoSize = true;
-            this.FridgeUsefulVolumeInfoLabel.Location = new System.Drawing.Point(149, 161);
-            this.FridgeUsefulVolumeInfoLabel.Name = "FridgeUsefulVolumeInfoLabel";
-            this.FridgeUsefulVolumeInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.FridgeUsefulVolumeInfoLabel.TabIndex = 50;
-            this.FridgeUsefulVolumeInfoLabel.Text = "Info";
-            // 
-            // FreezerUsefulVolumeInfoLabel
-            // 
-            this.FreezerUsefulVolumeInfoLabel.AutoSize = true;
-            this.FreezerUsefulVolumeInfoLabel.Location = new System.Drawing.Point(155, 190);
-            this.FreezerUsefulVolumeInfoLabel.Name = "FreezerUsefulVolumeInfoLabel";
-            this.FreezerUsefulVolumeInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.FreezerUsefulVolumeInfoLabel.TabIndex = 51;
-            this.FreezerUsefulVolumeInfoLabel.Text = "Info";
-            // 
-            // EnergyClassInfoLabel
-            // 
-            this.EnergyClassInfoLabel.AutoSize = true;
-            this.EnergyClassInfoLabel.Location = new System.Drawing.Point(98, 219);
-            this.EnergyClassInfoLabel.Name = "EnergyClassInfoLabel";
-            this.EnergyClassInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.EnergyClassInfoLabel.TabIndex = 52;
-            this.EnergyClassInfoLabel.Text = "Info";
-            // 
-            // NoiseLevelInfoLabel
-            // 
-            this.NoiseLevelInfoLabel.AutoSize = true;
-            this.NoiseLevelInfoLabel.Location = new System.Drawing.Point(90, 248);
-            this.NoiseLevelInfoLabel.Name = "NoiseLevelInfoLabel";
-            this.NoiseLevelInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.NoiseLevelInfoLabel.TabIndex = 53;
-            this.NoiseLevelInfoLabel.Text = "Info";
-            // 
-            // RefrigerantInfoLabel
-            // 
-            this.RefrigerantInfoLabel.AutoSize = true;
-            this.RefrigerantInfoLabel.Location = new System.Drawing.Point(89, 277);
-            this.RefrigerantInfoLabel.Name = "RefrigerantInfoLabel";
-            this.RefrigerantInfoLabel.Size = new System.Drawing.Size(31, 19);
-            this.RefrigerantInfoLabel.TabIndex = 54;
-            this.RefrigerantInfoLabel.Text = "Info";
+            this.MiniBarInfoLabel.AutoSize = true;
+            this.MiniBarInfoLabel.Location = new System.Drawing.Point(74, 45);
+            this.MiniBarInfoLabel.Name = "MiniBarInfoLabel";
+            this.MiniBarInfoLabel.Size = new System.Drawing.Size(31, 19);
+            this.MiniBarInfoLabel.TabIndex = 44;
+            this.MiniBarInfoLabel.Text = "Info";
             // 
             // ShowFridgeFullInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 470);
+            this.ClientSize = new System.Drawing.Size(860, 480);
             this.Controls.Add(this.FridgeFeaturesInfoGroupBox);
             this.Controls.Add(this.ExtraInfoGroupBox);
             this.Controls.Add(this.BasicInfoGroupBox);

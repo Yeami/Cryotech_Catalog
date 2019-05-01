@@ -44,6 +44,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,62 +56,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddNewFreezer.cs">
+    <Compile Include="Forms\AddNewFreezer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddNewFreezer.Designer.cs">
+    <Compile Include="Forms\AddNewFreezer.Designer.cs">
       <DependentUpon>AddNewFreezer.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddNewFridge.cs">
+    <Compile Include="Forms\AddNewFridge.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddNewFridge.Designer.cs">
+    <Compile Include="Forms\AddNewFridge.Designer.cs">
       <DependentUpon>AddNewFridge.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Device.cs" />
     <Compile Include="Classes\Freezer.cs" />
     <Compile Include="Classes\Fridge.cs" />
     <Compile Include="Classes\IFeatures.cs" />
-    <Compile Include="CryotechMainForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CryotechMainForm.Designer.cs">
-      <DependentUpon>CryotechMainForm.cs</DependentUpon>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FridgeTemplate.cs">
+    <Compile Include="Forms\FridgeTemplate.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FridgeTemplate.Designer.cs">
+    <Compile Include="Forms\FridgeTemplate.Designer.cs">
       <DependentUpon>FridgeTemplate.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShowFridgeFullInfo.cs">
+    <Compile Include="Forms\ShowFridgeFullInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShowFridgeFullInfo.Designer.cs">
+    <Compile Include="Forms\ShowFridgeFullInfo.Designer.cs">
       <DependentUpon>ShowFridgeFullInfo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddNewFridge.resx">
+    <EmbeddedResource Include="Forms\AddNewFridge.resx">
       <DependentUpon>AddNewFridge.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CryotechMainForm.resx">
-      <DependentUpon>CryotechMainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FridgeTemplate.resx">
+    <EmbeddedResource Include="Forms\FridgeTemplate.resx">
       <DependentUpon>FridgeTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="ShowFridgeFullInfo.resx">
+    <EmbeddedResource Include="Forms\ShowFridgeFullInfo.resx">
       <DependentUpon>ShowFridgeFullInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -118,6 +114,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -126,9 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\CoolingIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
