@@ -289,6 +289,7 @@
             this.TitleLabel.Size = new System.Drawing.Size(152, 37);
             this.TitleLabel.TabIndex = 29;
             this.TitleLabel.Text = "TITLELABEL";
+            this.TitleLabel.DoubleClick += new System.EventHandler(this.TitleLabel_DoubleClick);
             this.TitleLabel.MouseLeave += new System.EventHandler(this.TitleLabel_MouseLeave);
             this.TitleLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleLabel_MouseMove);
             // 

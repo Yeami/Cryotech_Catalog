@@ -59,16 +59,16 @@ namespace Cryotech_Catalog.Forms
 
         private void TitleLabel_DoubleClick(object sender, EventArgs e)
         {
-            //ShowFridgeFullInfo FridgeInfoForm = new ShowFridgeFullInfo(NewFridge);
-            //FridgeInfoForm.Show();
+            ShowFreezerFullInfo FreezerInfoForm = new ShowFreezerFullInfo(NewFreezer);
+            FreezerInfoForm.Show();
         }
 
-        private Image ByteArrayToImage(byte[] byteArrayIn)
+        private Image ByteArrayToImage(byte[] ByteArray)
         {
-            using (var ms = new MemoryStream(byteArrayIn))
+            using (var ImageMemoryStream = new MemoryStream(ByteArray))
             {
-                Image returnImage = Image.FromStream(ms);
-                return returnImage;
+                Image Result = Image.FromStream(ImageMemoryStream);
+                return Result;
             }
         }
 

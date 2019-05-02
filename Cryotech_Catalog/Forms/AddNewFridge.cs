@@ -88,10 +88,10 @@ namespace Cryotech_Catalog
 
         private byte[] ImageToByteArray(Image UploadedImage)
         {
-            using (var ms = new MemoryStream())
+            using (var ByteMemoryStream = new MemoryStream())
             {
-                UploadedImage.Save(ms, UploadedImage.RawFormat);
-                return ms.ToArray();
+                UploadedImage.Save(ByteMemoryStream, UploadedImage.RawFormat);
+                return ByteMemoryStream.ToArray();
             }
         }
 

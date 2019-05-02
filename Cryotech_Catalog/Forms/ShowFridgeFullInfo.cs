@@ -54,12 +54,12 @@ namespace Cryotech_Catalog
             RehangingDoorsInfoLabel.Text = (NewFridge.RehangingDoors == true) ? "Yes" : "No";
         }
 
-        private Image ByteArrayToImage(byte[] byteArrayIn)
+        private Image ByteArrayToImage(byte[] ByteArray)
         {
-            using (var ms = new MemoryStream(byteArrayIn))
+            using (var ImageMemoryStream = new MemoryStream(ByteArray))
             {
-                Image returnImage = Image.FromStream(ms);
-                return returnImage;
+                Image Result = Image.FromStream(ImageMemoryStream);
+                return Result;
             }
         }
     }

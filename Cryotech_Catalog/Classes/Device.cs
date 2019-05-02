@@ -31,35 +31,35 @@ namespace Cryotech_Catalog.Classes
     public abstract class Device : IFeatures
     {
         // Int
-        public int Price { get; set; }               // Цена 
-        public int OverallVolume { get; set; }       // Общий объем 
-        public int Weight { get; set; }              // Вес 
-        public int Height { get; set; }              // Высота 
-        public int Width { get; set; }               // Ширина 
-        public int Depth { get; set; }               // Глубина 
+        public int Price { get; set; }               // Цена
+        public int OverallVolume { get; set; }       // Общий объем
+        public int Weight { get; set; }              // Вес
+        public int Height { get; set; }              // Высота
+        public int Width { get; set; }               // Ширина
+        public int Depth { get; set; }               // Глубина
 
         // String
-        public string Name { get; set; }             // Название 
-        public string Manufacturer { get; set; }     // Производитель 
-        public string Color { get; set; }            // Цвет 
-        public string ProducingCountry { get; set; } // Страна-производитель 
+        public string Name { get; set; }             // Название
+        public string Manufacturer { get; set; }     // Производитель
+        public string Color { get; set; }            // Цвет
+        public string ProducingCountry { get; set; } // Страна-производитель
 
         // Bool
-        public bool Display { get; set; }            // Дисплей 
-        public bool DefrostSystem { get; set; }      // Система разморозки 
-        public bool RehangingDoors { get; set; }     // Перенавешивание дверей 
+        public bool Display { get; set; }            // Дисплей
+        public bool DefrostSystem { get; set; }      // Система разморозки
+        public bool RehangingDoors { get; set; }     // Перенавешивание дверей
 
         // Image
         public byte[] DeviceImage { get; set; }
 
         // Enums
-        public InstallationMethodType InstallationMethod { get; set; } // Способ установки 
-        public ControlType ControlType { get; set; }                   // Тип управления 
+        public InstallationMethodType InstallationMethod { get; set; } // Способ установки
+        public ControlType ControlType { get; set; }                   // Тип управления
 
         // IFeatures
-        public int NoiseLevel { get; set; }              // Уровень шума 
-        public string Refrigerant { get; set; }          // Хладагент 
-        public EnergyClassType EnergyClass { get; set; } // Класс энергопотребления 
+        public int NoiseLevel { get; set; }              // Уровень шума
+        public string Refrigerant { get; set; }          // Хладагент
+        public EnergyClassType EnergyClass { get; set; } // Класс энергопотребления
 
         // Default Constructor
         public Device()

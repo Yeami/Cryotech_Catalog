@@ -20,7 +20,7 @@ namespace Cryotech_Catalog.Classes
     public class Freezer : Device
     {
         // Int
-        public int UsefulVolume { get; set; }          // Полезный объем 
+        public int UsefulVolume { get; set; }          // Полезный объем
         public int ShelvesAmount { get; set; }         // Количество полок
         public int BoxesAmount { get; set; }           // Количество ящиков
         public int AutonomousColdStorage { get; set; } // Автономное сохранение холода
@@ -32,7 +32,7 @@ namespace Cryotech_Catalog.Classes
         public bool EcoMode { get; set; }      // Эко режим
 
         // Enum
-        public FreezerType DeviceType { get; set; } // Тип устройства
+        public FreezerType DeviceType { get; set; } // Тип устройства 
 
         // Default Constructor
         public Freezer()
