@@ -19,6 +19,12 @@ namespace Cryotech_Catalog
     {
         List<Device> Devices = new List<Device>();
 
+        List<Device> FilteredDevices = new List<Device>();
+
+        List<Device> ManufactorerDevices = new List<Device>();
+        List<Device> ColorDevices = new List<Device>();
+        List<Device> TypeDevices = new List<Device>();
+
         public CryotechMainForm()
         {
             InitializeComponent();
@@ -71,20 +77,31 @@ namespace Cryotech_Catalog
 
             using (FileStream DeviceFileStream = new FileStream("Data.xml", FileMode.OpenOrCreate))
             {
-                Devices = (List<Device>)DeviceDeserializer.Deserialize(DeviceFileStream);
-
-                foreach (var NewDevice in Devices)
+                try
                 {
-                    if (NewDevice.GetType() == typeof(Fridge))
-                    {
-                        Fridge NewFridge = (Fridge)Convert.ChangeType(NewDevice, typeof(Fridge));
-                        DisplayFridgeDevice(NewFridge);
-                    }
-                    else if (NewDevice.GetType() == typeof(Freezer))
-                    {
-                        Freezer NewFreezer = (Freezer)Convert.ChangeType(NewDevice, typeof(Freezer));
-                        DisplayFreezerDevice(NewFreezer);
-                    }
+                    Devices = (List<Device>)DeviceDeserializer.Deserialize(DeviceFileStream);
+                    DisplayDevices(Devices);
+                }
+                catch (Exception)
+                {
+                    Devices.Clear();
+                }
+            }
+        }
+
+        private void DisplayDevices(List<Device> Devices)
+        {
+            foreach (var NewDevice in Devices)
+            {
+                if (NewDevice.GetType() == typeof(Fridge))
+                {
+                    Fridge NewFridge = (Fridge)Convert.ChangeType(NewDevice, typeof(Fridge));
+                    DisplayFridgeDevice(NewFridge);
+                }
+                else if (NewDevice.GetType() == typeof(Freezer))
+                {
+                    Freezer NewFreezer = (Freezer)Convert.ChangeType(NewDevice, typeof(Freezer));
+                    DisplayFreezerDevice(NewFreezer);
                 }
             }
         }
@@ -99,6 +116,162 @@ namespace Cryotech_Catalog
         {
             FreezerTemplate FreezerUserControl = new FreezerTemplate(NewFreezer);
             DeviceViewPanel.Controls.Add(FreezerUserControl);
+        }
+
+        private void FiltersApplyButton_Click(object sender, EventArgs e)
+        {
+            if ((DeviceTypeCheckedListBox.CheckedItems.Count != 0) || 
+                (ManufactorerCheckedListBox.CheckedItems.Count != 0) ||
+                (ColorCheckedListBox.CheckedItems.Count != 0))
+            {
+                // Clear the Filtered Devices Lists
+                FilteredDevices.Clear();
+                ManufactorerDevices.Clear();
+                ColorDevices.Clear();
+                TypeDevices.Clear();
+                // Clear View Panel
+                DeviceViewPanel.Controls.Clear();
+                // Display Filtered Devices
+                ApplyFilters();
+                FilteredDevices = FilteredDevices.Distinct().ToList();
+                DisplayDevices(FilteredDevices);
+            }
+            else
+            {
+                DeviceViewPanel.Controls.Clear();
+                DisplayDevices(Devices);
+            }
+        }
+
+        private void ApplyFilters()
+        {
+            if ((ManufactorerCheckedListBox.CheckedItems.Count != 0) && (ColorCheckedListBox.CheckedItems.Count != 0))
+            {
+                ManufactorerFilter();
+                ColorFilter();
+                IEnumerable<Device> FilteredResult = ManufactorerDevices.Intersect(ColorDevices);
+
+                foreach (var FilteredItem in FilteredResult)
+                {
+                    if (FilteredItem.GetType() == typeof(Fridge))
+                    {
+                        Fridge NewFridge = (Fridge)Convert.ChangeType(FilteredItem, typeof(Fridge));
+                        FilteredDevices.Add(NewFridge);
+                    }
+                    else if (FilteredItem.GetType() == typeof(Freezer))
+                    {
+                        Freezer NewFreezer = (Freezer)Convert.ChangeType(FilteredItem, typeof(Freezer));
+                        FilteredDevices.Add(NewFreezer);
+                    }
+                }
+            }
+            if ((ManufactorerCheckedListBox.CheckedItems.Count != 0) && (ColorCheckedListBox.CheckedItems.Count == 0))
+            {
+                ManufactorerFilter();
+                FilteredDevices = ManufactorerDevices;
+            }
+            if ((ColorCheckedListBox.CheckedItems.Count != 0) && (ManufactorerCheckedListBox.CheckedItems.Count == 0))
+            {
+                ColorFilter();
+                FilteredDevices = ColorDevices;
+            }
+
+            if (DeviceTypeCheckedListBox.CheckedItems.Count != 0)
+            {
+                if (FilteredDevices.Count != 0)
+                {
+                    foreach (string CheckedListBoxItem in DeviceTypeCheckedListBox.CheckedItems)
+                    {
+                        //MessageBox.Show(CheckedListBoxItem);
+                        if (CheckedListBoxItem == "Fridge")
+                        {
+                            foreach (var DeviceItem in FilteredDevices)
+                            {
+                                if (DeviceItem.GetType() == typeof(Fridge))
+                                {
+                                    Fridge NewFridge = (Fridge)Convert.ChangeType(DeviceItem, typeof(Fridge));
+                                    TypeDevices.Add(NewFridge);
+                                }
+                            }
+                        }
+                        else if (CheckedListBoxItem == "Freezer")
+                        {
+                            foreach (var DeviceItem in FilteredDevices)
+                            {
+                                if (DeviceItem.GetType() == typeof(Freezer))
+                                {
+                                    Freezer NewFreezer = (Freezer)Convert.ChangeType(DeviceItem, typeof(Freezer));
+                                    TypeDevices.Add(NewFreezer);
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (string CheckedListBoxItem in DeviceTypeCheckedListBox.CheckedItems)
+                    {
+                        //MessageBox.Show(CheckedListBoxItem);
+                        if (CheckedListBoxItem == "Fridge")
+                        {
+                            foreach (var DeviceItem in Devices)
+                            {
+                                if (DeviceItem.GetType() == typeof(Fridge))
+                                {
+                                    Fridge NewFridge = (Fridge)Convert.ChangeType(DeviceItem, typeof(Fridge));
+                                    TypeDevices.Add(NewFridge);
+                                }
+                            }
+                        }
+                        else if (CheckedListBoxItem == "Freezer")
+                        {
+                            foreach (var DeviceItem in Devices)
+                            {
+                                if (DeviceItem.GetType() == typeof(Freezer))
+                                {
+                                    Freezer NewFreezer = (Freezer)Convert.ChangeType(DeviceItem, typeof(Freezer));
+                                    TypeDevices.Add(NewFreezer);
+                                }
+                            }
+                        }
+                    }
+                }
+                //FilteredDevices.Clear();
+                FilteredDevices = TypeDevices;
+            }
+        }
+
+        private void ManufactorerFilter()
+        {
+            foreach (string ManufactorerItem in ManufactorerCheckedListBox.CheckedItems)
+            {
+                foreach (var Device in Devices)
+                {
+                    if (ManufactorerItem == Device.Manufacturer.ToUpper())
+                    {
+                        ManufactorerDevices.Add(Device);
+                    }
+                }
+            }
+        }
+
+        private void ColorFilter()
+        {
+            foreach (string ColorItem in ColorCheckedListBox.CheckedItems)
+            {
+                foreach (var Device in Devices)
+                {
+                    if (ColorItem == Device.Color)
+                    {
+                        ColorDevices.Add(Device);
+                    }
+                }
+            }
+        }
+
+        private void DeviceTypeFilter()
+        {
+            
         }
     }
 }
