@@ -185,8 +185,10 @@
             this.PriceToTextBox.SelectionStart = 0;
             this.PriceToTextBox.ShortcutsEnabled = true;
             this.PriceToTextBox.Size = new System.Drawing.Size(115, 23);
+            this.PriceToTextBox.Style = MetroFramework.MetroColorStyle.Blue;
             this.PriceToTextBox.TabIndex = 102;
             this.PriceToTextBox.UseSelectable = true;
+            this.PriceToTextBox.UseStyleColors = true;
             this.PriceToTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.PriceToTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -204,6 +206,7 @@
             this.PriceFromTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.PriceFromTextBox.CustomButton.UseSelectable = true;
             this.PriceFromTextBox.CustomButton.Visible = false;
+            this.PriceFromTextBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.PriceFromTextBox.Lines = new string[0];
             this.PriceFromTextBox.Location = new System.Drawing.Point(6, 149);
             this.PriceFromTextBox.MaxLength = 32767;
@@ -215,8 +218,10 @@
             this.PriceFromTextBox.SelectionStart = 0;
             this.PriceFromTextBox.ShortcutsEnabled = true;
             this.PriceFromTextBox.Size = new System.Drawing.Size(115, 23);
+            this.PriceFromTextBox.Style = MetroFramework.MetroColorStyle.Blue;
             this.PriceFromTextBox.TabIndex = 101;
             this.PriceFromTextBox.UseSelectable = true;
+            this.PriceFromTextBox.UseStyleColors = true;
             this.PriceFromTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.PriceFromTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
