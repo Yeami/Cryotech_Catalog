@@ -21,11 +21,6 @@ namespace Cryotech_Catalog
 
         List<Device> FilteredDevices = new List<Device>();
 
-        List<Device> ManufactorerDevices = new List<Device>();
-        List<Device> ColorDevices = new List<Device>();
-        List<Device> TypeDevices = new List<Device>();
-        List<Device> PriceDevices = new List<Device>();
-
         public CryotechMainForm()
         {
             InitializeComponent();
@@ -121,7 +116,7 @@ namespace Cryotech_Catalog
 
         private void FiltersApplyButton_Click(object sender, EventArgs e)
         {
-            if ((DeviceTypeCheckedListBox.CheckedItems.Count != 0) || 
+            if ((DeviceTypeCheckedListBox.CheckedItems.Count != 0) ||
                 (ManufactorerCheckedListBox.CheckedItems.Count != 0) ||
                 (ColorCheckedListBox.CheckedItems.Count != 0) ||
                 (!String.IsNullOrEmpty(PriceFromTextBox.Text)) ||
@@ -129,12 +124,10 @@ namespace Cryotech_Catalog
             {
                 // Clear the Filtered Devices Lists
                 FilteredDevices.Clear();
-                ManufactorerDevices.Clear();
-                ColorDevices.Clear();
-                TypeDevices.Clear();
-                PriceDevices.Clear();
+
                 // Clear View Panel
                 DeviceViewPanel.Controls.Clear();
+
                 // Display Filtered Devices
                 ApplyFilters();
                 FilteredDevices = FilteredDevices.Distinct().ToList();
@@ -142,209 +135,197 @@ namespace Cryotech_Catalog
             }
             else
             {
+                // Clear View Panel
                 DeviceViewPanel.Controls.Clear();
+
+                // Display All Devices
                 DisplayDevices(Devices);
             }
         }
 
         private void ApplyFilters()
         {
-            // Manufactorer && Color Filters
-            if ((ManufactorerCheckedListBox.CheckedItems.Count != 0) && (ColorCheckedListBox.CheckedItems.Count != 0))
-            {
-                ManufactorerFilter();
-                ColorFilter();
-
-                IEnumerable<Device> FilteredResult = ManufactorerDevices.Intersect(ColorDevices);
-                FilteredDevices = FilteredResult.ToList();
-            }
-
             // Manufactorer Filter
-            if ((ManufactorerCheckedListBox.CheckedItems.Count != 0) && (ColorCheckedListBox.CheckedItems.Count == 0))
+            if (ManufactorerCheckedListBox.CheckedItems.Count != 0)
             {
-                ManufactorerFilter();
-                FilteredDevices = ManufactorerDevices;
+                FilteredDevices = ManufactorerFilter();
             }
 
             // Color Filter
-            if ((ColorCheckedListBox.CheckedItems.Count != 0) && (ManufactorerCheckedListBox.CheckedItems.Count == 0))
+            if (ColorCheckedListBox.CheckedItems.Count != 0)
             {
-                ColorFilter();
-                FilteredDevices = ColorDevices;
+                FilteredDevices = ColorFilter();
             }
 
             // DeviceType Filter
             if (DeviceTypeCheckedListBox.CheckedItems.Count != 0)
             {
-                DeviceTypeFilter();
-                FilteredDevices = TypeDevices;
+                FilteredDevices = DeviceTypeFilter();
             }
 
-            if ((!String.IsNullOrEmpty(PriceFromTextBox.Text)) && (!String.IsNullOrEmpty(PriceToTextBox.Text)))
+            // Price Filter
+            if ((!String.IsNullOrEmpty(PriceFromTextBox.Text)) || (!String.IsNullOrEmpty(PriceToTextBox.Text)))
             {
-                int PriceFrom = Convert.ToInt32(PriceFromTextBox.Text);
-                int PriceTo = Convert.ToInt32(PriceToTextBox.Text);
-
-                if (FilteredDevices.Count != 0)
-                {
-                    foreach (var DeviceItem in FilteredDevices)
-                    {
-                        if ((DeviceItem.Price >= PriceFrom) && (DeviceItem.Price <= PriceTo))
-                        {
-                            PriceDevices.Add(DeviceItem);
-                        }
-                    }
-                }
-                else
-                {
-                    foreach (var DeviceItem in Devices)
-                    {
-                        if ((DeviceItem.Price >= PriceFrom) && (DeviceItem.Price <= PriceTo))
-                        {
-                            PriceDevices.Add(DeviceItem);
-                        }
-                    }
-                }
-                FilteredDevices = PriceDevices;
-            }
-            if ((!String.IsNullOrEmpty(PriceFromTextBox.Text)) && (String.IsNullOrEmpty(PriceToTextBox.Text)))
-            {
-                int PriceFrom = Convert.ToInt32(PriceFromTextBox.Text);
-
-                if (FilteredDevices.Count != 0)
-                {
-                    foreach (var DeviceItem in FilteredDevices)
-                    {
-                        if (DeviceItem.Price >= PriceFrom)
-                        {
-                            PriceDevices.Add(DeviceItem);
-                        }
-                    }
-                }
-                else
-                {
-                    foreach (var DeviceItem in Devices)
-                    {
-                        if (DeviceItem.Price >= PriceFrom)
-                        {
-                            PriceDevices.Add(DeviceItem);
-                        }
-                    }
-                }
-                FilteredDevices = PriceDevices;
-            }
-            if ((!String.IsNullOrEmpty(PriceToTextBox.Text)) && (String.IsNullOrEmpty(PriceFromTextBox.Text)))
-            {
-                int PriceTo = Convert.ToInt32(PriceToTextBox.Text);
-
-                if (FilteredDevices.Count != 0)
-                {
-                    foreach (var DeviceItem in FilteredDevices)
-                    {
-                        if (DeviceItem.Price <= PriceTo)
-                        {
-                            PriceDevices.Add(DeviceItem);
-                        }
-                    }
-                }
-                else
-                {
-                    foreach (var DeviceItem in Devices)
-                    {
-                        if (DeviceItem.Price <= PriceTo)
-                        {
-                            PriceDevices.Add(DeviceItem);
-                        }
-                    }
-                }
-                FilteredDevices = PriceDevices;
+                FilteredDevices = PriceFilter();
             }
         }
 
-        private void ManufactorerFilter()
+        // Manufactorer Display Data Function
+        private List<Device> ManufactorerFilter()
         {
+            List<Device> ManufactorerDevices = new List<Device>();
+
             foreach (string ManufactorerItem in ManufactorerCheckedListBox.CheckedItems)
             {
-                foreach (var Device in Devices)
+                foreach (var DeviceItem in Devices)
                 {
-                    if (ManufactorerItem == Device.Manufacturer.ToUpper())
+                    if (ManufactorerItem == DeviceItem.Manufacturer.ToUpper())
                     {
-                        ManufactorerDevices.Add(Device);
+                        ManufactorerDevices.Add(DeviceItem);
                     }
                 }
             }
+
+            return ManufactorerDevices;
         }
 
-        private void ColorFilter()
+        // Color Display Data Function
+        private List<Device> ColorFilter()
         {
+            List<Device> ColorDevices = new List<Device>();
+
             foreach (string ColorItem in ColorCheckedListBox.CheckedItems)
             {
-                foreach (var Device in Devices)
+                if (FilteredDevices.Count != 0)
                 {
-                    if (ColorItem == Device.Color)
+                    foreach (var DeviceItem in FilteredDevices)
                     {
-                        ColorDevices.Add(Device);
+                        ColorItemCheck(ColorDevices, ColorItem, DeviceItem);
                     }
+                }
+                else
+                {
+                    foreach (var DeviceItem in Devices)
+                    {
+                        ColorItemCheck(ColorDevices, ColorItem, DeviceItem);
+                    }
+                }
+            }
+
+            return ColorDevices;
+        }
+
+        private void ColorItemCheck(List<Device> ColorDevices, string ColorItem, Device DeviceItem)
+        {
+            if (ColorItem == DeviceItem.Color)
+            {
+                ColorDevices.Add(DeviceItem);
+            }
+        }
+
+        // DeviceType Display Data Function
+        private List<Device> DeviceTypeFilter()
+        {
+            List<Device> TypeDevices = new List<Device>();
+
+            foreach (string CheckedListBoxItem in DeviceTypeCheckedListBox.CheckedItems)
+            {
+                if (FilteredDevices.Count != 0)
+                {
+                    foreach (var DeviceItem in FilteredDevices)
+                    {
+                        DeviceTypeItemCheck(TypeDevices, CheckedListBoxItem, DeviceItem);
+                    }
+                }
+                else
+                {
+                    foreach (var DeviceItem in Devices)
+                    {
+                        DeviceTypeItemCheck(TypeDevices, CheckedListBoxItem, DeviceItem);
+                    }
+                }
+            }
+
+            return TypeDevices;
+        }
+
+        private void DeviceTypeItemCheck(List<Device> TypeDevices, string CheckedListBoxItem, Device DeviceItem)
+        {
+            if (CheckedListBoxItem == "Fridge")
+            {
+                if (DeviceItem.GetType() == typeof(Fridge))
+                {
+                    Fridge NewFridge = (Fridge)Convert.ChangeType(DeviceItem, typeof(Fridge));
+                    TypeDevices.Add(NewFridge);
+                }
+            }
+            else if (CheckedListBoxItem == "Freezer")
+            {
+                if (DeviceItem.GetType() == typeof(Freezer))
+                {
+                    Freezer NewFreezer = (Freezer)Convert.ChangeType(DeviceItem, typeof(Freezer));
+                    TypeDevices.Add(NewFreezer);
                 }
             }
         }
 
-        private void DeviceTypeFilter()
+        // Price Display Data Function
+        private List<Device> PriceFilter()
         {
+            List<Device> PriceDevices = new List<Device>();
+
+            int PriceFrom = 0;
+            int PriceTo = 0;
+
+            if (!String.IsNullOrEmpty(PriceFromTextBox.Text))
+            {
+                PriceFrom = Convert.ToInt32(PriceFromTextBox.Text);
+            }
+
+            if (!String.IsNullOrEmpty(PriceToTextBox.Text))
+            {
+                PriceTo = Convert.ToInt32(PriceToTextBox.Text);
+            }
+
             if (FilteredDevices.Count != 0)
             {
-                foreach (string CheckedListBoxItem in DeviceTypeCheckedListBox.CheckedItems)
+                foreach (var DeviceItem in FilteredDevices)
                 {
-                    if (CheckedListBoxItem == "Fridge")
-                    {
-                        foreach (var DeviceItem in FilteredDevices)
-                        {
-                            if (DeviceItem.GetType() == typeof(Fridge))
-                            {
-                                Fridge NewFridge = (Fridge)Convert.ChangeType(DeviceItem, typeof(Fridge));
-                                TypeDevices.Add(NewFridge);
-                            }
-                        }
-                    }
-                    else if (CheckedListBoxItem == "Freezer")
-                    {
-                        foreach (var DeviceItem in FilteredDevices)
-                        {
-                            if (DeviceItem.GetType() == typeof(Freezer))
-                            {
-                                Freezer NewFreezer = (Freezer)Convert.ChangeType(DeviceItem, typeof(Freezer));
-                                TypeDevices.Add(NewFreezer);
-                            }
-                        }
-                    }
+                    PriceItemCheck(PriceDevices, DeviceItem, PriceFrom, PriceTo);
                 }
             }
             else
             {
-                foreach (string CheckedListBoxItem in DeviceTypeCheckedListBox.CheckedItems)
+                foreach (var DeviceItem in Devices)
                 {
-                    if (CheckedListBoxItem == "Fridge")
-                    {
-                        foreach (var DeviceItem in Devices)
-                        {
-                            if (DeviceItem.GetType() == typeof(Fridge))
-                            {
-                                Fridge NewFridge = (Fridge)Convert.ChangeType(DeviceItem, typeof(Fridge));
-                                TypeDevices.Add(NewFridge);
-                            }
-                        }
-                    }
-                    else if (CheckedListBoxItem == "Freezer")
-                    {
-                        foreach (var DeviceItem in Devices)
-                        {
-                            if (DeviceItem.GetType() == typeof(Freezer))
-                            {
-                                Freezer NewFreezer = (Freezer)Convert.ChangeType(DeviceItem, typeof(Freezer));
-                                TypeDevices.Add(NewFreezer);
-                            }
-                        }
-                    }
+                    PriceItemCheck(PriceDevices, DeviceItem, PriceFrom, PriceTo);
+                }
+            }
+
+            return PriceDevices;
+        }
+
+        private void PriceItemCheck(List<Device> PriceDevices, Device DeviceItem, int PriceFrom, int PriceTo)
+        {
+            if ((!String.IsNullOrEmpty(PriceFromTextBox.Text)) && (!String.IsNullOrEmpty(PriceToTextBox.Text)))
+            {
+                if ((DeviceItem.Price >= PriceFrom) && (DeviceItem.Price <= PriceTo))
+                {
+                    PriceDevices.Add(DeviceItem);
+                }
+            }
+            else if ((!String.IsNullOrEmpty(PriceFromTextBox.Text)) && (String.IsNullOrEmpty(PriceToTextBox.Text)))
+            {
+                if (DeviceItem.Price >= PriceFrom)
+                {
+                    PriceDevices.Add(DeviceItem);
+                }
+            }
+            else if ((!String.IsNullOrEmpty(PriceToTextBox.Text)) && (String.IsNullOrEmpty(PriceFromTextBox.Text)))
+            {
+                if (DeviceItem.Price <= PriceTo)
+                {
+                    PriceDevices.Add(DeviceItem);
                 }
             }
         }

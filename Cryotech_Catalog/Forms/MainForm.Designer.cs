@@ -174,6 +174,7 @@
             this.PriceToTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.PriceToTextBox.CustomButton.UseSelectable = true;
             this.PriceToTextBox.CustomButton.Visible = false;
+            this.PriceToTextBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.PriceToTextBox.Lines = new string[0];
             this.PriceToTextBox.Location = new System.Drawing.Point(147, 149);
             this.PriceToTextBox.MaxLength = 32767;
