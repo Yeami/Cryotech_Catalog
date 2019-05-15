@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -174,6 +175,157 @@ namespace Cryotech_Catalog
                 .ToList();
             FreezerLocationComboBox.DisplayMember = "Description";
             FreezerLocationComboBox.ValueMember = "value";
+        }
+
+        // TextBoxes Validating
+        private void ManufacturerTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex ManufacturerRegexFormat = new Regex("^[A-Za-z]+$");
+            if (!ManufacturerRegexFormat.IsMatch(ManufacturerTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only letters of the English alphabet", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void NameTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex NameRegexFormat = new Regex("^[A-Za-z0-9]+$");
+            if (!NameRegexFormat.IsMatch(NameTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only numbers or letters of the English alphabet", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void PriceTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex PriceRegexFormat = new Regex("^([1-9][0-9]*)$");
+            if (!PriceRegexFormat.IsMatch(PriceTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only numbers and don't starts from zero", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void OverallVolumeTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex OverallVolumeRegexFormat = new Regex("^([1-9][0-9]*)$");
+            if (!OverallVolumeRegexFormat.IsMatch(OverallVolumeTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only numbers and don't starts from zero", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void WeightTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex WeightRegexFormat = new Regex("^([1-9][0-9]*)$");
+            if (!WeightRegexFormat.IsMatch(WeightTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only numbers and don't starts from zero", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void HeightTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex HeightRegexFormat = new Regex("^([1-9][0-9]*)$");
+            if (!HeightRegexFormat.IsMatch(HeightTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only numbers and don't starts from zero", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void WidthTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex WidthRegexFormat = new Regex("^([1-9][0-9]*)$");
+            if (!WidthRegexFormat.IsMatch(WidthTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only numbers and don't starts from zero", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void DepthTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex DepthRegexFormat = new Regex("^([1-9][0-9]*)$");
+            if (!DepthRegexFormat.IsMatch(DepthTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only numbers and don't starts from zero", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void ColorTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex ColorRegexFormat = new Regex("^[A-Za-z]+$");
+            if (!ColorRegexFormat.IsMatch(ColorTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only letters of the English alphabet", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void ProducingCountryTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex ProducingCountryRegexFormat = new Regex("^[A-Za-z]+$");
+            if (!ProducingCountryRegexFormat.IsMatch(ProducingCountryTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only letters of the English alphabet", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void NoiseLevelTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex NoiseLevelRegexFormat = new Regex("^([1-9][0-9]*)$");
+            if (!NoiseLevelRegexFormat.IsMatch(NoiseLevelTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only numbers and don't starts from zero", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void RefrigerantTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex RefrigerantRegexFormat = new Regex("^[A-Za-z0-9]+$");
+            if (!RefrigerantRegexFormat.IsMatch(RefrigerantTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only numbers or letters of the English alphabet", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void CompressorsAmountTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex CompressorsAmountRegexFormat = new Regex("^([1-9][0-9]*)$");
+            if (!CompressorsAmountRegexFormat.IsMatch(CompressorsAmountTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only numbers and don't starts from zero", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void FridgeUsefulVolumeTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex FridgeUsefulVolumeRegexFormat = new Regex("^([1-9][0-9]*)$");
+            if (!FridgeUsefulVolumeRegexFormat.IsMatch(FridgeUsefulVolumeTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only numbers and don't starts from zero", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void FreezerUsefulVolumeTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex FreezerUsefulVolumeRegexFormat = new Regex("^([1-9][0-9]*)$");
+            if (!FreezerUsefulVolumeRegexFormat.IsMatch(FreezerUsefulVolumeTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only numbers and don't starts from zero", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

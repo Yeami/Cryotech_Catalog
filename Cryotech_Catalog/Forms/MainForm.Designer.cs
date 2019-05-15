@@ -32,7 +32,6 @@
             this.AddFridgeTile = new MetroFramework.Controls.MetroTile();
             this.SaveDataTile = new MetroFramework.Controls.MetroTile();
             this.DeviceViewPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.CompareObjectsTile = new MetroFramework.Controls.MetroTile();
             this.DeviceFilterGroupBox = new System.Windows.Forms.GroupBox();
             this.ColorCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.FilterColorLabel = new MetroFramework.Controls.MetroLabel();
@@ -44,8 +43,12 @@
             this.FilterManufacturerLabel = new MetroFramework.Controls.MetroLabel();
             this.FilterDeviceTypeLabel = new MetroFramework.Controls.MetroLabel();
             this.DeviceTypeCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.FilterPanelLabel = new MetroFramework.Controls.MetroLabel();
             this.FiltersApplyButton = new MetroFramework.Controls.MetroButton();
+            this.DeviceTotalNumberLabel = new MetroFramework.Controls.MetroLabel();
+            this.DeviceTotalNumberInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.DisplayedDevicesInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.DisplayedDevicesLabel = new MetroFramework.Controls.MetroLabel();
             this.DeviceFilterGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,20 +105,6 @@
             this.DeviceViewPanel.TabIndex = 8;
             this.DeviceViewPanel.WrapContents = false;
             // 
-            // CompareObjectsTile
-            // 
-            this.CompareObjectsTile.ActiveControl = null;
-            this.CompareObjectsTile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CompareObjectsTile.Location = new System.Drawing.Point(964, 52);
-            this.CompareObjectsTile.Name = "CompareObjectsTile";
-            this.CompareObjectsTile.Size = new System.Drawing.Size(204, 43);
-            this.CompareObjectsTile.Style = MetroFramework.MetroColorStyle.Lime;
-            this.CompareObjectsTile.TabIndex = 9;
-            this.CompareObjectsTile.Text = "Compare";
-            this.CompareObjectsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.CompareObjectsTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.CompareObjectsTile.UseSelectable = true;
-            // 
             // DeviceFilterGroupBox
             // 
             this.DeviceFilterGroupBox.Controls.Add(this.ColorCheckedListBox);
@@ -141,10 +130,6 @@
             this.ColorCheckedListBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ColorCheckedListBox.ForeColor = System.Drawing.Color.Black;
             this.ColorCheckedListBox.FormattingEnabled = true;
-            this.ColorCheckedListBox.Items.AddRange(new object[] {
-            "Graphite",
-            "Silver",
-            "Dark grey"});
             this.ColorCheckedListBox.Location = new System.Drawing.Point(7, 399);
             this.ColorCheckedListBox.Name = "ColorCheckedListBox";
             this.ColorCheckedListBox.Size = new System.Drawing.Size(255, 112);
@@ -253,11 +238,6 @@
             this.ManufactorerCheckedListBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ManufactorerCheckedListBox.ForeColor = System.Drawing.Color.Black;
             this.ManufactorerCheckedListBox.FormattingEnabled = true;
-            this.ManufactorerCheckedListBox.Items.AddRange(new object[] {
-            "SAMSUNG",
-            "ATLANT",
-            "VESTFROST",
-            "LIEBHERR"});
             this.ManufactorerCheckedListBox.Location = new System.Drawing.Point(5, 231);
             this.ManufactorerCheckedListBox.Name = "ManufactorerCheckedListBox";
             this.ManufactorerCheckedListBox.Size = new System.Drawing.Size(255, 112);
@@ -298,15 +278,15 @@
             this.DeviceTypeCheckedListBox.Size = new System.Drawing.Size(255, 56);
             this.DeviceTypeCheckedListBox.TabIndex = 0;
             // 
-            // metroLabel1
+            // FilterPanelLabel
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 70);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(153, 25);
-            this.metroLabel1.TabIndex = 11;
-            this.metroLabel1.Text = "Device Filter Panel:";
+            this.FilterPanelLabel.AutoSize = true;
+            this.FilterPanelLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.FilterPanelLabel.Location = new System.Drawing.Point(23, 70);
+            this.FilterPanelLabel.Name = "FilterPanelLabel";
+            this.FilterPanelLabel.Size = new System.Drawing.Size(153, 25);
+            this.FilterPanelLabel.TabIndex = 11;
+            this.FilterPanelLabel.Text = "Device Filter Panel:";
             // 
             // FiltersApplyButton
             // 
@@ -320,21 +300,65 @@
             this.FiltersApplyButton.UseStyleColors = true;
             this.FiltersApplyButton.Click += new System.EventHandler(this.FiltersApplyButton_Click);
             // 
+            // DeviceTotalNumberLabel
+            // 
+            this.DeviceTotalNumberLabel.AutoSize = true;
+            this.DeviceTotalNumberLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.DeviceTotalNumberLabel.Location = new System.Drawing.Point(966, 45);
+            this.DeviceTotalNumberLabel.Name = "DeviceTotalNumberLabel";
+            this.DeviceTotalNumberLabel.Size = new System.Drawing.Size(132, 25);
+            this.DeviceTotalNumberLabel.TabIndex = 13;
+            this.DeviceTotalNumberLabel.Text = "Devices in Base:";
+            // 
+            // DeviceTotalNumberInfoLabel
+            // 
+            this.DeviceTotalNumberInfoLabel.AutoSize = true;
+            this.DeviceTotalNumberInfoLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.DeviceTotalNumberInfoLabel.Location = new System.Drawing.Point(1104, 45);
+            this.DeviceTotalNumberInfoLabel.Name = "DeviceTotalNumberInfoLabel";
+            this.DeviceTotalNumberInfoLabel.Size = new System.Drawing.Size(41, 25);
+            this.DeviceTotalNumberInfoLabel.TabIndex = 14;
+            this.DeviceTotalNumberInfoLabel.Text = "Info";
+            // 
+            // DisplayedDevicesInfoLabel
+            // 
+            this.DisplayedDevicesInfoLabel.AutoSize = true;
+            this.DisplayedDevicesInfoLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.DisplayedDevicesInfoLabel.Location = new System.Drawing.Point(1122, 70);
+            this.DisplayedDevicesInfoLabel.Name = "DisplayedDevicesInfoLabel";
+            this.DisplayedDevicesInfoLabel.Size = new System.Drawing.Size(41, 25);
+            this.DisplayedDevicesInfoLabel.TabIndex = 16;
+            this.DisplayedDevicesInfoLabel.Text = "Info";
+            // 
+            // DisplayedDevicesLabel
+            // 
+            this.DisplayedDevicesLabel.AutoSize = true;
+            this.DisplayedDevicesLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.DisplayedDevicesLabel.Location = new System.Drawing.Point(965, 70);
+            this.DisplayedDevicesLabel.Name = "DisplayedDevicesLabel";
+            this.DisplayedDevicesLabel.Size = new System.Drawing.Size(151, 25);
+            this.DisplayedDevicesLabel.TabIndex = 15;
+            this.DisplayedDevicesLabel.Text = "Displayed Devices:";
+            // 
             // CryotechMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1250, 650);
+            this.Controls.Add(this.DisplayedDevicesInfoLabel);
+            this.Controls.Add(this.DisplayedDevicesLabel);
+            this.Controls.Add(this.DeviceTotalNumberInfoLabel);
+            this.Controls.Add(this.DeviceTotalNumberLabel);
             this.Controls.Add(this.FiltersApplyButton);
-            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.FilterPanelLabel);
             this.Controls.Add(this.DeviceFilterGroupBox);
-            this.Controls.Add(this.CompareObjectsTile);
             this.Controls.Add(this.DeviceViewPanel);
             this.Controls.Add(this.SaveDataTile);
             this.Controls.Add(this.AddFridgeTile);
             this.Controls.Add(this.AddFreezerTile);
             this.MaximizeBox = false;
             this.Name = "CryotechMainForm";
+            this.Resizable = false;
             this.Text = "Cryotech Catalog";
             this.Load += new System.EventHandler(this.CryotechMainForm_Load);
             this.DeviceFilterGroupBox.ResumeLayout(false);
@@ -349,10 +373,9 @@
         private MetroFramework.Controls.MetroTile AddFridgeTile;
         private MetroFramework.Controls.MetroTile SaveDataTile;
         private System.Windows.Forms.FlowLayoutPanel DeviceViewPanel;
-        private MetroFramework.Controls.MetroTile CompareObjectsTile;
         private System.Windows.Forms.GroupBox DeviceFilterGroupBox;
         private System.Windows.Forms.CheckedListBox DeviceTypeCheckedListBox;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel FilterPanelLabel;
         private System.Windows.Forms.CheckedListBox ManufactorerCheckedListBox;
         private MetroFramework.Controls.MetroLabel FilterManufacturerLabel;
         private MetroFramework.Controls.MetroLabel FilterDeviceTypeLabel;
@@ -363,6 +386,10 @@
         private System.Windows.Forms.CheckedListBox ColorCheckedListBox;
         private MetroFramework.Controls.MetroLabel FilterColorLabel;
         private MetroFramework.Controls.MetroButton FiltersApplyButton;
+        private MetroFramework.Controls.MetroLabel DeviceTotalNumberLabel;
+        private MetroFramework.Controls.MetroLabel DeviceTotalNumberInfoLabel;
+        private MetroFramework.Controls.MetroLabel DisplayedDevicesInfoLabel;
+        private MetroFramework.Controls.MetroLabel DisplayedDevicesLabel;
     }
 }
 

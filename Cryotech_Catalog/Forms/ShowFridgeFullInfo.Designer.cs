@@ -652,7 +652,9 @@
             this.Controls.Add(this.ExtraInfoGroupBox);
             this.Controls.Add(this.BasicInfoGroupBox);
             this.Controls.Add(this.FridgePictureBox);
+            this.MaximizeBox = false;
             this.Name = "ShowFridgeFullInfo";
+            this.Resizable = false;
             this.Text = "Fridge Full Info";
             ((System.ComponentModel.ISupportInitialize)(this.FridgePictureBox)).EndInit();
             this.BasicInfoGroupBox.ResumeLayout(false);

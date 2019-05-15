@@ -176,7 +176,7 @@
             this.FreezerFeaturesInfoGroupBox.Location = new System.Drawing.Point(23, 400);
             this.FreezerFeaturesInfoGroupBox.Name = "FreezerFeaturesInfoGroupBox";
             this.FreezerFeaturesInfoGroupBox.Size = new System.Drawing.Size(623, 108);
-            this.FreezerFeaturesInfoGroupBox.TabIndex = 36;
+            this.FreezerFeaturesInfoGroupBox.TabIndex = 3;
             this.FreezerFeaturesInfoGroupBox.TabStop = false;
             // 
             // EcoModeRadioButtonsPanel
@@ -450,7 +450,7 @@
             this.DeviceTypeComboBox.Location = new System.Drawing.Point(149, 79);
             this.DeviceTypeComboBox.Name = "DeviceTypeComboBox";
             this.DeviceTypeComboBox.Size = new System.Drawing.Size(155, 29);
-            this.DeviceTypeComboBox.TabIndex = 19;
+            this.DeviceTypeComboBox.TabIndex = 14;
             this.DeviceTypeComboBox.UseSelectable = true;
             // 
             // BoxesAmountLabel
@@ -496,10 +496,11 @@
             this.BoxesAmountTextBox.SelectionStart = 0;
             this.BoxesAmountTextBox.ShortcutsEnabled = true;
             this.BoxesAmountTextBox.Size = new System.Drawing.Size(155, 23);
-            this.BoxesAmountTextBox.TabIndex = 15;
+            this.BoxesAmountTextBox.TabIndex = 21;
             this.BoxesAmountTextBox.UseSelectable = true;
             this.BoxesAmountTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.BoxesAmountTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.BoxesAmountTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.BoxesAmountTextBox_Validating);
             // 
             // UsefulVolumeLabel
             // 
@@ -507,7 +508,7 @@
             this.UsefulVolumeLabel.Location = new System.Drawing.Point(6, 305);
             this.UsefulVolumeLabel.Name = "UsefulVolumeLabel";
             this.UsefulVolumeLabel.Size = new System.Drawing.Size(95, 19);
-            this.UsefulVolumeLabel.TabIndex = 6;
+            this.UsefulVolumeLabel.TabIndex = 11;
             this.UsefulVolumeLabel.Text = "Useful Volume:";
             // 
             // UsefulVolumeTextBox
@@ -535,10 +536,11 @@
             this.UsefulVolumeTextBox.SelectionStart = 0;
             this.UsefulVolumeTextBox.ShortcutsEnabled = true;
             this.UsefulVolumeTextBox.Size = new System.Drawing.Size(155, 23);
-            this.UsefulVolumeTextBox.TabIndex = 13;
+            this.UsefulVolumeTextBox.TabIndex = 11;
             this.UsefulVolumeTextBox.UseSelectable = true;
             this.UsefulVolumeTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.UsefulVolumeTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.UsefulVolumeTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.UsefulVolumeTextBox_Validating);
             // 
             // ShelvesAmountTextBox
             // 
@@ -565,10 +567,11 @@
             this.ShelvesAmountTextBox.SelectionStart = 0;
             this.ShelvesAmountTextBox.ShortcutsEnabled = true;
             this.ShelvesAmountTextBox.Size = new System.Drawing.Size(155, 23);
-            this.ShelvesAmountTextBox.TabIndex = 14;
+            this.ShelvesAmountTextBox.TabIndex = 20;
             this.ShelvesAmountTextBox.UseSelectable = true;
             this.ShelvesAmountTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.ShelvesAmountTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.ShelvesAmountTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ShelvesAmountTextBox_Validating);
             // 
             // ShelvesAmountLabel
             // 
@@ -604,7 +607,7 @@
             this.ExtraInfoGroupBox.Location = new System.Drawing.Point(336, 63);
             this.ExtraInfoGroupBox.Name = "ExtraInfoGroupBox";
             this.ExtraInfoGroupBox.Size = new System.Drawing.Size(310, 338);
-            this.ExtraInfoGroupBox.TabIndex = 35;
+            this.ExtraInfoGroupBox.TabIndex = 2;
             this.ExtraInfoGroupBox.TabStop = false;
             // 
             // FreezingPowerLabel
@@ -641,10 +644,11 @@
             this.FreezingPowerTextBox.SelectionStart = 0;
             this.FreezingPowerTextBox.ShortcutsEnabled = true;
             this.FreezingPowerTextBox.Size = new System.Drawing.Size(155, 23);
-            this.FreezingPowerTextBox.TabIndex = 31;
+            this.FreezingPowerTextBox.TabIndex = 18;
             this.FreezingPowerTextBox.UseSelectable = true;
             this.FreezingPowerTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.FreezingPowerTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.FreezingPowerTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.FreezingPowerTextBox_Validating);
             // 
             // AutoColdStorageLabel
             // 
@@ -680,10 +684,11 @@
             this.AutoColdStorageTextBox.SelectionStart = 0;
             this.AutoColdStorageTextBox.ShortcutsEnabled = true;
             this.AutoColdStorageTextBox.Size = new System.Drawing.Size(155, 23);
-            this.AutoColdStorageTextBox.TabIndex = 32;
+            this.AutoColdStorageTextBox.TabIndex = 19;
             this.AutoColdStorageTextBox.UseSelectable = true;
             this.AutoColdStorageTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.AutoColdStorageTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.AutoColdStorageTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.AutoColdStorageTextBox_Validating);
             // 
             // InstallationMethodComboBox
             // 
@@ -692,7 +697,7 @@
             this.InstallationMethodComboBox.Location = new System.Drawing.Point(149, 11);
             this.InstallationMethodComboBox.Name = "InstallationMethodComboBox";
             this.InstallationMethodComboBox.Size = new System.Drawing.Size(155, 29);
-            this.InstallationMethodComboBox.TabIndex = 16;
+            this.InstallationMethodComboBox.TabIndex = 12;
             this.InstallationMethodComboBox.UseSelectable = true;
             // 
             // InstallationMethodLabel
@@ -738,10 +743,11 @@
             this.NoiseLevelTextBox.SelectionStart = 0;
             this.NoiseLevelTextBox.ShortcutsEnabled = true;
             this.NoiseLevelTextBox.Size = new System.Drawing.Size(155, 23);
-            this.NoiseLevelTextBox.TabIndex = 11;
+            this.NoiseLevelTextBox.TabIndex = 16;
             this.NoiseLevelTextBox.UseSelectable = true;
             this.NoiseLevelTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.NoiseLevelTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.NoiseLevelTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.NoiseLevelTextBox_Validating);
             // 
             // ControlTypeComboBox
             // 
@@ -750,7 +756,7 @@
             this.ControlTypeComboBox.Location = new System.Drawing.Point(149, 113);
             this.ControlTypeComboBox.Name = "ControlTypeComboBox";
             this.ControlTypeComboBox.Size = new System.Drawing.Size(155, 29);
-            this.ControlTypeComboBox.TabIndex = 17;
+            this.ControlTypeComboBox.TabIndex = 15;
             this.ControlTypeComboBox.UseSelectable = true;
             // 
             // EnergyClassComboBox
@@ -760,7 +766,7 @@
             this.EnergyClassComboBox.Location = new System.Drawing.Point(149, 45);
             this.EnergyClassComboBox.Name = "EnergyClassComboBox";
             this.EnergyClassComboBox.Size = new System.Drawing.Size(155, 29);
-            this.EnergyClassComboBox.TabIndex = 18;
+            this.EnergyClassComboBox.TabIndex = 13;
             this.EnergyClassComboBox.UseSelectable = true;
             // 
             // RefrigerantLabel
@@ -806,10 +812,11 @@
             this.RefrigerantTextBox.SelectionStart = 0;
             this.RefrigerantTextBox.ShortcutsEnabled = true;
             this.RefrigerantTextBox.Size = new System.Drawing.Size(155, 23);
-            this.RefrigerantTextBox.TabIndex = 12;
+            this.RefrigerantTextBox.TabIndex = 17;
             this.RefrigerantTextBox.UseSelectable = true;
             this.RefrigerantTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.RefrigerantTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.RefrigerantTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.RefrigerantTextBox_Validating);
             // 
             // EnergyClassLabel
             // 
@@ -847,7 +854,7 @@
             this.BasicInfoGroupBox.Location = new System.Drawing.Point(23, 63);
             this.BasicInfoGroupBox.Name = "BasicInfoGroupBox";
             this.BasicInfoGroupBox.Size = new System.Drawing.Size(310, 338);
-            this.BasicInfoGroupBox.TabIndex = 34;
+            this.BasicInfoGroupBox.TabIndex = 1;
             this.BasicInfoGroupBox.TabStop = false;
             // 
             // ProducingCountryLabel
@@ -856,7 +863,7 @@
             this.ProducingCountryLabel.Location = new System.Drawing.Point(6, 277);
             this.ProducingCountryLabel.Name = "ProducingCountryLabel";
             this.ProducingCountryLabel.Size = new System.Drawing.Size(123, 19);
-            this.ProducingCountryLabel.TabIndex = 18;
+            this.ProducingCountryLabel.TabIndex = 10;
             this.ProducingCountryLabel.Text = "Producing Country:";
             // 
             // ProducingCountryTextBox
@@ -888,6 +895,7 @@
             this.ProducingCountryTextBox.UseSelectable = true;
             this.ProducingCountryTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.ProducingCountryTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.ProducingCountryTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ProducingCountryTextBox_Validating);
             // 
             // ColorTextBox
             // 
@@ -918,6 +926,7 @@
             this.ColorTextBox.UseSelectable = true;
             this.ColorTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.ColorTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.ColorTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ColorTextBox_Validating);
             // 
             // ColorLabel
             // 
@@ -925,7 +934,7 @@
             this.ColorLabel.Location = new System.Drawing.Point(6, 248);
             this.ColorLabel.Name = "ColorLabel";
             this.ColorLabel.Size = new System.Drawing.Size(46, 19);
-            this.ColorLabel.TabIndex = 16;
+            this.ColorLabel.TabIndex = 9;
             this.ColorLabel.Text = "Color:";
             // 
             // ManufacturerLabel
@@ -934,7 +943,7 @@
             this.ManufacturerLabel.Location = new System.Drawing.Point(6, 16);
             this.ManufacturerLabel.Name = "ManufacturerLabel";
             this.ManufacturerLabel.Size = new System.Drawing.Size(91, 19);
-            this.ManufacturerLabel.TabIndex = 0;
+            this.ManufacturerLabel.TabIndex = 1;
             this.ManufacturerLabel.Text = "Manufacturer:";
             // 
             // DepthLabel
@@ -943,7 +952,7 @@
             this.DepthLabel.Location = new System.Drawing.Point(6, 219);
             this.DepthLabel.Name = "DepthLabel";
             this.DepthLabel.Size = new System.Drawing.Size(47, 19);
-            this.DepthLabel.TabIndex = 14;
+            this.DepthLabel.TabIndex = 8;
             this.DepthLabel.Text = "Depth:";
             // 
             // ManufacturerTextBox
@@ -975,6 +984,7 @@
             this.ManufacturerTextBox.UseSelectable = true;
             this.ManufacturerTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.ManufacturerTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.ManufacturerTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ManufacturerTextBox_Validating);
             // 
             // PriceTextBox
             // 
@@ -1005,6 +1015,7 @@
             this.PriceTextBox.UseSelectable = true;
             this.PriceTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.PriceTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.PriceTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.PriceTextBox_Validating);
             // 
             // HeightLabel
             // 
@@ -1012,7 +1023,7 @@
             this.HeightLabel.Location = new System.Drawing.Point(6, 161);
             this.HeightLabel.Name = "HeightLabel";
             this.HeightLabel.Size = new System.Drawing.Size(50, 19);
-            this.HeightLabel.TabIndex = 10;
+            this.HeightLabel.TabIndex = 6;
             this.HeightLabel.Text = "Height:";
             // 
             // OverallVolumeLabel
@@ -1021,7 +1032,7 @@
             this.OverallVolumeLabel.Location = new System.Drawing.Point(6, 103);
             this.OverallVolumeLabel.Name = "OverallVolumeLabel";
             this.OverallVolumeLabel.Size = new System.Drawing.Size(102, 19);
-            this.OverallVolumeLabel.TabIndex = 6;
+            this.OverallVolumeLabel.TabIndex = 4;
             this.OverallVolumeLabel.Text = "Overall Volume:";
             // 
             // WeightTextBox
@@ -1053,6 +1064,7 @@
             this.WeightTextBox.UseSelectable = true;
             this.WeightTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.WeightTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.WeightTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.WeightTextBox_Validating);
             // 
             // DepthTextBox
             // 
@@ -1083,6 +1095,7 @@
             this.DepthTextBox.UseSelectable = true;
             this.DepthTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.DepthTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.DepthTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.DepthTextBox_Validating);
             // 
             // NameLabel
             // 
@@ -1122,6 +1135,7 @@
             this.WidthTextBox.UseSelectable = true;
             this.WidthTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.WidthTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.WidthTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.WidthTextBox_Validating);
             // 
             // HeightTextBox
             // 
@@ -1152,6 +1166,7 @@
             this.HeightTextBox.UseSelectable = true;
             this.HeightTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.HeightTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.HeightTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.HeightTextBox_Validating);
             // 
             // PriceLabel
             // 
@@ -1159,7 +1174,7 @@
             this.PriceLabel.Location = new System.Drawing.Point(6, 74);
             this.PriceLabel.Name = "PriceLabel";
             this.PriceLabel.Size = new System.Drawing.Size(41, 19);
-            this.PriceLabel.TabIndex = 4;
+            this.PriceLabel.TabIndex = 3;
             this.PriceLabel.Text = "Price:";
             // 
             // WeightLabel
@@ -1168,7 +1183,7 @@
             this.WeightLabel.Location = new System.Drawing.Point(6, 132);
             this.WeightLabel.Name = "WeightLabel";
             this.WeightLabel.Size = new System.Drawing.Size(53, 19);
-            this.WeightLabel.TabIndex = 8;
+            this.WeightLabel.TabIndex = 5;
             this.WeightLabel.Text = "Weight:";
             // 
             // OverallVolumeTextBox
@@ -1200,6 +1215,7 @@
             this.OverallVolumeTextBox.UseSelectable = true;
             this.OverallVolumeTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.OverallVolumeTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.OverallVolumeTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.OverallVolumeTextBox_Validating);
             // 
             // NameTextBox
             // 
@@ -1230,6 +1246,7 @@
             this.NameTextBox.UseSelectable = true;
             this.NameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.NameTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.NameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.NameTextBox_Validating);
             // 
             // WidthLabel
             // 
@@ -1237,7 +1254,7 @@
             this.WidthLabel.Location = new System.Drawing.Point(6, 190);
             this.WidthLabel.Name = "WidthLabel";
             this.WidthLabel.Size = new System.Drawing.Size(47, 19);
-            this.WidthLabel.TabIndex = 12;
+            this.WidthLabel.TabIndex = 7;
             this.WidthLabel.Text = "Width:";
             // 
             // AddNewFreezer
@@ -1252,7 +1269,9 @@
             this.Controls.Add(this.ExtraInfoGroupBox);
             this.Controls.Add(this.BasicInfoGroupBox);
             this.Controls.Add(this.CurrentPictureLabel);
+            this.MaximizeBox = false;
             this.Name = "AddNewFreezer";
+            this.Resizable = false;
             this.Text = "Add New Freezer";
             this.FreezerFeaturesInfoGroupBox.ResumeLayout(false);
             this.FreezerFeaturesInfoGroupBox.PerformLayout();

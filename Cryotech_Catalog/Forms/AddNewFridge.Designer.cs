@@ -145,6 +145,7 @@
             this.ManufacturerTextBox.UseSelectable = true;
             this.ManufacturerTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.ManufacturerTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.ManufacturerTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ManufacturerTextBox_Validating);
             // 
             // NameTextBox
             // 
@@ -175,6 +176,7 @@
             this.NameTextBox.UseSelectable = true;
             this.NameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.NameTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.NameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.NameTextBox_Validating);
             // 
             // NameLabel
             // 
@@ -214,6 +216,7 @@
             this.PriceTextBox.UseSelectable = true;
             this.PriceTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.PriceTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.PriceTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.PriceTextBox_Validating);
             // 
             // PriceLabel
             // 
@@ -253,6 +256,7 @@
             this.OverallVolumeTextBox.UseSelectable = true;
             this.OverallVolumeTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.OverallVolumeTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.OverallVolumeTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.OverallVolumeTextBox_Validating);
             // 
             // OverallVolumeLabel
             // 
@@ -292,6 +296,7 @@
             this.WeightTextBox.UseSelectable = true;
             this.WeightTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.WeightTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.WeightTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.WeightTextBox_Validating);
             // 
             // WeightLabel
             // 
@@ -331,6 +336,7 @@
             this.HeightTextBox.UseSelectable = true;
             this.HeightTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.HeightTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.HeightTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.HeightTextBox_Validating);
             // 
             // HeightLabel
             // 
@@ -370,6 +376,7 @@
             this.WidthTextBox.UseSelectable = true;
             this.WidthTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.WidthTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.WidthTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.WidthTextBox_Validating);
             // 
             // WidthLabel
             // 
@@ -409,6 +416,7 @@
             this.DepthTextBox.UseSelectable = true;
             this.DepthTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.DepthTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.DepthTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.DepthTextBox_Validating);
             // 
             // DepthLabel
             // 
@@ -485,6 +493,7 @@
             this.ProducingCountryTextBox.UseSelectable = true;
             this.ProducingCountryTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.ProducingCountryTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.ProducingCountryTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ProducingCountryTextBox_Validating);
             // 
             // ColorTextBox
             // 
@@ -515,6 +524,7 @@
             this.ColorTextBox.UseSelectable = true;
             this.ColorTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.ColorTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.ColorTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ColorTextBox_Validating);
             // 
             // ColorLabel
             // 
@@ -661,7 +671,7 @@
             this.InstallationMethodComboBox.Location = new System.Drawing.Point(149, 11);
             this.InstallationMethodComboBox.Name = "InstallationMethodComboBox";
             this.InstallationMethodComboBox.Size = new System.Drawing.Size(155, 29);
-            this.InstallationMethodComboBox.TabIndex = 16;
+            this.InstallationMethodComboBox.TabIndex = 11;
             this.InstallationMethodComboBox.UseSelectable = true;
             // 
             // DefrostSystemLabel
@@ -734,10 +744,11 @@
             this.NoiseLevelTextBox.SelectionStart = 0;
             this.NoiseLevelTextBox.ShortcutsEnabled = true;
             this.NoiseLevelTextBox.Size = new System.Drawing.Size(155, 23);
-            this.NoiseLevelTextBox.TabIndex = 11;
+            this.NoiseLevelTextBox.TabIndex = 14;
             this.NoiseLevelTextBox.UseSelectable = true;
             this.NoiseLevelTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.NoiseLevelTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.NoiseLevelTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.NoiseLevelTextBox_Validating);
             // 
             // EnergyClassComboBox
             // 
@@ -746,7 +757,7 @@
             this.EnergyClassComboBox.Location = new System.Drawing.Point(149, 81);
             this.EnergyClassComboBox.Name = "EnergyClassComboBox";
             this.EnergyClassComboBox.Size = new System.Drawing.Size(155, 29);
-            this.EnergyClassComboBox.TabIndex = 18;
+            this.EnergyClassComboBox.TabIndex = 13;
             this.EnergyClassComboBox.UseSelectable = true;
             // 
             // ControlTypeComboBox
@@ -756,7 +767,7 @@
             this.ControlTypeComboBox.Location = new System.Drawing.Point(149, 46);
             this.ControlTypeComboBox.Name = "ControlTypeComboBox";
             this.ControlTypeComboBox.Size = new System.Drawing.Size(155, 29);
-            this.ControlTypeComboBox.TabIndex = 17;
+            this.ControlTypeComboBox.TabIndex = 12;
             this.ControlTypeComboBox.UseSelectable = true;
             // 
             // RefrigerantLabel
@@ -802,10 +813,11 @@
             this.RefrigerantTextBox.SelectionStart = 0;
             this.RefrigerantTextBox.ShortcutsEnabled = true;
             this.RefrigerantTextBox.Size = new System.Drawing.Size(155, 23);
-            this.RefrigerantTextBox.TabIndex = 12;
+            this.RefrigerantTextBox.TabIndex = 15;
             this.RefrigerantTextBox.UseSelectable = true;
             this.RefrigerantTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.RefrigerantTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.RefrigerantTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.RefrigerantTextBox_Validating);
             // 
             // EnergyClassLabel
             // 
@@ -882,7 +894,7 @@
             this.DeviceTypeComboBox.Location = new System.Drawing.Point(149, 11);
             this.DeviceTypeComboBox.Name = "DeviceTypeComboBox";
             this.DeviceTypeComboBox.Size = new System.Drawing.Size(155, 29);
-            this.DeviceTypeComboBox.TabIndex = 19;
+            this.DeviceTypeComboBox.TabIndex = 16;
             this.DeviceTypeComboBox.UseSelectable = true;
             // 
             // FreshnessZoneRadioButtonsPanel
@@ -981,10 +993,11 @@
             this.FreezerUsefulVolumeTextBox.SelectionStart = 0;
             this.FreezerUsefulVolumeTextBox.ShortcutsEnabled = true;
             this.FreezerUsefulVolumeTextBox.Size = new System.Drawing.Size(155, 23);
-            this.FreezerUsefulVolumeTextBox.TabIndex = 15;
+            this.FreezerUsefulVolumeTextBox.TabIndex = 21;
             this.FreezerUsefulVolumeTextBox.UseSelectable = true;
             this.FreezerUsefulVolumeTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.FreezerUsefulVolumeTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.FreezerUsefulVolumeTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.FreezerUsefulVolumeTextBox_Validating);
             // 
             // FreezerLocationComboBox
             // 
@@ -993,7 +1006,7 @@
             this.FreezerLocationComboBox.Location = new System.Drawing.Point(149, 81);
             this.FreezerLocationComboBox.Name = "FreezerLocationComboBox";
             this.FreezerLocationComboBox.Size = new System.Drawing.Size(155, 29);
-            this.FreezerLocationComboBox.TabIndex = 21;
+            this.FreezerLocationComboBox.TabIndex = 18;
             this.FreezerLocationComboBox.UseSelectable = true;
             // 
             // CompressorsAmountLabel
@@ -1012,7 +1025,7 @@
             this.CompressorTypeComboBox.Location = new System.Drawing.Point(149, 46);
             this.CompressorTypeComboBox.Name = "CompressorTypeComboBox";
             this.CompressorTypeComboBox.Size = new System.Drawing.Size(155, 29);
-            this.CompressorTypeComboBox.TabIndex = 20;
+            this.CompressorTypeComboBox.TabIndex = 17;
             this.CompressorTypeComboBox.UseSelectable = true;
             // 
             // CompressorsAmountTextBox
@@ -1040,10 +1053,11 @@
             this.CompressorsAmountTextBox.SelectionStart = 0;
             this.CompressorsAmountTextBox.ShortcutsEnabled = true;
             this.CompressorsAmountTextBox.Size = new System.Drawing.Size(155, 23);
-            this.CompressorsAmountTextBox.TabIndex = 13;
+            this.CompressorsAmountTextBox.TabIndex = 19;
             this.CompressorsAmountTextBox.UseSelectable = true;
             this.CompressorsAmountTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.CompressorsAmountTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.CompressorsAmountTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.CompressorsAmountTextBox_Validating);
             // 
             // CompressorTypeLabel
             // 
@@ -1088,10 +1102,11 @@
             this.FridgeUsefulVolumeTextBox.SelectionStart = 0;
             this.FridgeUsefulVolumeTextBox.ShortcutsEnabled = true;
             this.FridgeUsefulVolumeTextBox.Size = new System.Drawing.Size(155, 23);
-            this.FridgeUsefulVolumeTextBox.TabIndex = 14;
+            this.FridgeUsefulVolumeTextBox.TabIndex = 20;
             this.FridgeUsefulVolumeTextBox.UseSelectable = true;
             this.FridgeUsefulVolumeTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.FridgeUsefulVolumeTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.FridgeUsefulVolumeTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.FridgeUsefulVolumeTextBox_Validating);
             // 
             // FridgeUsefulVolumeLabel
             // 
@@ -1163,6 +1178,7 @@
             this.Controls.Add(this.BasicInfoGroupBox);
             this.MaximizeBox = false;
             this.Name = "AddNewFridge";
+            this.Resizable = false;
             this.Text = "Add New Fridge";
             this.BasicInfoGroupBox.ResumeLayout(false);
             this.BasicInfoGroupBox.PerformLayout();

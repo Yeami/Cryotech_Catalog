@@ -76,11 +76,32 @@ namespace Cryotech_Catalog
                 try
                 {
                     Devices = (List<Device>)DeviceDeserializer.Deserialize(DeviceFileStream);
+                    AddNewDataToCheckedListBoxes();
                     DisplayDevices(Devices);
+
+                    DeviceTotalNumberInfoLabel.Text = Convert.ToString(Devices.Count());
+                    DisplayedDevicesInfoLabel.Text = Convert.ToString(Devices.Count());
                 }
                 catch (Exception)
                 {
                     Devices.Clear();
+                }
+            }
+        }
+
+        // Automatically adding items to CheckedListBoxes
+        private void AddNewDataToCheckedListBoxes()
+        {
+            foreach (var NewDevice in Devices)
+            {
+                if (!ColorCheckedListBox.Items.Contains(NewDevice.Color))
+                {
+                    ColorCheckedListBox.Items.Add(NewDevice.Color);
+                }
+
+                if (!ManufactorerCheckedListBox.Items.Contains(NewDevice.Manufacturer))
+                {
+                    ManufactorerCheckedListBox.Items.Add(NewDevice.Manufacturer);
                 }
             }
         }
@@ -135,11 +156,23 @@ namespace Cryotech_Catalog
             }
             else
             {
+                // Clear the Filtered Devices Lists
+                FilteredDevices.Clear();
+
                 // Clear View Panel
                 DeviceViewPanel.Controls.Clear();
 
                 // Display All Devices
                 DisplayDevices(Devices);
+            }
+
+            if (FilteredDevices.Count() != 0)
+            {
+                DisplayedDevicesInfoLabel.Text = Convert.ToString(FilteredDevices.Count());
+            }
+            else
+            {
+                DisplayedDevicesInfoLabel.Text = Convert.ToString(Devices.Count());
             }
         }
 

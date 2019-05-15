@@ -674,7 +674,9 @@
             this.Controls.Add(this.FreezerPictureBox);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.NameInfoLabel);
+            this.MaximizeBox = false;
             this.Name = "ShowFreezerFullInfo";
+            this.Resizable = false;
             this.Text = "Freezer Full Info";
             this.FreezerFeaturesInfoGroupBox.ResumeLayout(false);
             this.FreezerFeaturesInfoGroupBox.PerformLayout();
