@@ -34,7 +34,7 @@ namespace Cryotech_Catalog
         private void SaveNewFridgeTile_Click(object sender, EventArgs e)
         {
             // Basic Info GroupBox
-            NewFridge.Manufacturer = ManufacturerTextBox.Text;
+            NewFridge.Manufacturer = ManufacturerTextBox.Text.ToUpper();
             NewFridge.Name = NameTextBox.Text;
             NewFridge.Price = Convert.ToInt32(PriceTextBox.Text);
             NewFridge.OverallVolume = Convert.ToInt32(OverallVolumeTextBox.Text);

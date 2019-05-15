@@ -109,7 +109,7 @@ namespace Cryotech_Catalog.Classes
 
         public string TitleToString(string ObjectType)
         {
-            return ObjectType + " " + this.Manufacturer.ToUpper() + " " + this.Name.ToUpper();
+            return ObjectType + " " + this.Manufacturer + " " + this.Name;
         }
 
         public string DimensionsToString()

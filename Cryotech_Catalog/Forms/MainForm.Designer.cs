@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CryotechMainForm));
             this.AddFreezerTile = new MetroFramework.Controls.MetroTile();
             this.AddFridgeTile = new MetroFramework.Controls.MetroTile();
             this.SaveDataTile = new MetroFramework.Controls.MetroTile();
@@ -177,6 +178,7 @@
             this.PriceToTextBox.UseStyleColors = true;
             this.PriceToTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.PriceToTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.PriceToTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.PriceToTextBox_Validating);
             // 
             // PriceFromTextBox
             // 
@@ -210,6 +212,7 @@
             this.PriceFromTextBox.UseStyleColors = true;
             this.PriceFromTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.PriceFromTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.PriceFromTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.PriceFromTextBox_Validating);
             // 
             // FilterPriceDashLabel
             // 
@@ -304,7 +307,7 @@
             // 
             this.DeviceTotalNumberLabel.AutoSize = true;
             this.DeviceTotalNumberLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.DeviceTotalNumberLabel.Location = new System.Drawing.Point(966, 45);
+            this.DeviceTotalNumberLabel.Location = new System.Drawing.Point(965, 45);
             this.DeviceTotalNumberLabel.Name = "DeviceTotalNumberLabel";
             this.DeviceTotalNumberLabel.Size = new System.Drawing.Size(132, 25);
             this.DeviceTotalNumberLabel.TabIndex = 13;
@@ -314,7 +317,7 @@
             // 
             this.DeviceTotalNumberInfoLabel.AutoSize = true;
             this.DeviceTotalNumberInfoLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.DeviceTotalNumberInfoLabel.Location = new System.Drawing.Point(1104, 45);
+            this.DeviceTotalNumberInfoLabel.Location = new System.Drawing.Point(1103, 45);
             this.DeviceTotalNumberInfoLabel.Name = "DeviceTotalNumberInfoLabel";
             this.DeviceTotalNumberInfoLabel.Size = new System.Drawing.Size(41, 25);
             this.DeviceTotalNumberInfoLabel.TabIndex = 14;
@@ -356,6 +359,7 @@
             this.Controls.Add(this.SaveDataTile);
             this.Controls.Add(this.AddFridgeTile);
             this.Controls.Add(this.AddFreezerTile);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "CryotechMainForm";
             this.Resizable = false;

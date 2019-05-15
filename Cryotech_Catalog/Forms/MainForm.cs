@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Json;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
@@ -50,7 +51,7 @@ namespace Cryotech_Catalog
                 if (AddFreezerForm.ShowDialog() == DialogResult.OK)
                 {
                     Devices.Add(NewFreezer);
-                    MetroFramework.MetroMessageBox.Show(this, "Ok", "Freezer Added Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroFramework.MetroMessageBox.Show(this, "Freezer Added Successfully", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DisplayFreezerDevice(NewFreezer);
                 }
             }
@@ -64,7 +65,7 @@ namespace Cryotech_Catalog
             {
                 DeviceSerializer.Serialize(DeviceFileStream, Devices);
             }
-            MetroFramework.MetroMessageBox.Show(this, "Ok", "Data Saved Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MetroFramework.MetroMessageBox.Show(this, "Data Saved Successfully", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void CryotechMainForm_Load(object sender, EventArgs e)
@@ -153,6 +154,7 @@ namespace Cryotech_Catalog
                 ApplyFilters();
                 FilteredDevices = FilteredDevices.Distinct().ToList();
                 DisplayDevices(FilteredDevices);
+                DisplayedDevicesInfoLabel.Text = Convert.ToString(DeviceViewPanel.Controls.Count);
             }
             else
             {
@@ -165,19 +167,18 @@ namespace Cryotech_Catalog
                 // Display All Devices
                 DisplayDevices(Devices);
             }
-
-            if (FilteredDevices.Count() != 0)
-            {
-                DisplayedDevicesInfoLabel.Text = Convert.ToString(FilteredDevices.Count());
-            }
-            else
-            {
-                DisplayedDevicesInfoLabel.Text = Convert.ToString(Devices.Count());
-            }
         }
 
         private void ApplyFilters()
         {
+            FilteredDevices = Devices;
+
+            // DeviceType Filter
+            if (DeviceTypeCheckedListBox.CheckedItems.Count != 0)
+            {
+                FilteredDevices = DeviceTypeFilter();
+            }
+
             // Manufactorer Filter
             if (ManufactorerCheckedListBox.CheckedItems.Count != 0)
             {
@@ -190,69 +191,10 @@ namespace Cryotech_Catalog
                 FilteredDevices = ColorFilter();
             }
 
-            // DeviceType Filter
-            if (DeviceTypeCheckedListBox.CheckedItems.Count != 0)
-            {
-                FilteredDevices = DeviceTypeFilter();
-            }
-
             // Price Filter
             if ((!String.IsNullOrEmpty(PriceFromTextBox.Text)) || (!String.IsNullOrEmpty(PriceToTextBox.Text)))
             {
                 FilteredDevices = PriceFilter();
-            }
-        }
-
-        // Manufactorer Display Data Function
-        private List<Device> ManufactorerFilter()
-        {
-            List<Device> ManufactorerDevices = new List<Device>();
-
-            foreach (string ManufactorerItem in ManufactorerCheckedListBox.CheckedItems)
-            {
-                foreach (var DeviceItem in Devices)
-                {
-                    if (ManufactorerItem == DeviceItem.Manufacturer.ToUpper())
-                    {
-                        ManufactorerDevices.Add(DeviceItem);
-                    }
-                }
-            }
-
-            return ManufactorerDevices;
-        }
-
-        // Color Display Data Function
-        private List<Device> ColorFilter()
-        {
-            List<Device> ColorDevices = new List<Device>();
-
-            foreach (string ColorItem in ColorCheckedListBox.CheckedItems)
-            {
-                if (FilteredDevices.Count != 0)
-                {
-                    foreach (var DeviceItem in FilteredDevices)
-                    {
-                        ColorItemCheck(ColorDevices, ColorItem, DeviceItem);
-                    }
-                }
-                else
-                {
-                    foreach (var DeviceItem in Devices)
-                    {
-                        ColorItemCheck(ColorDevices, ColorItem, DeviceItem);
-                    }
-                }
-            }
-
-            return ColorDevices;
-        }
-
-        private void ColorItemCheck(List<Device> ColorDevices, string ColorItem, Device DeviceItem)
-        {
-            if (ColorItem == DeviceItem.Color)
-            {
-                ColorDevices.Add(DeviceItem);
             }
         }
 
@@ -263,19 +205,9 @@ namespace Cryotech_Catalog
 
             foreach (string CheckedListBoxItem in DeviceTypeCheckedListBox.CheckedItems)
             {
-                if (FilteredDevices.Count != 0)
+                foreach (var DeviceItem in FilteredDevices)
                 {
-                    foreach (var DeviceItem in FilteredDevices)
-                    {
-                        DeviceTypeItemCheck(TypeDevices, CheckedListBoxItem, DeviceItem);
-                    }
-                }
-                else
-                {
-                    foreach (var DeviceItem in Devices)
-                    {
-                        DeviceTypeItemCheck(TypeDevices, CheckedListBoxItem, DeviceItem);
-                    }
+                    DeviceTypeItemCheck(TypeDevices, CheckedListBoxItem, DeviceItem);
                 }
             }
 
@@ -302,6 +234,49 @@ namespace Cryotech_Catalog
             }
         }
 
+        // Manufactorer Display Data Function
+        private List<Device> ManufactorerFilter()
+        {
+            List<Device> ManufactorerDevices = new List<Device>();
+
+            foreach (string ManufactorerItem in ManufactorerCheckedListBox.CheckedItems)
+            {
+                foreach (var DeviceItem in FilteredDevices)
+                {
+                    if (ManufactorerItem == DeviceItem.Manufacturer)
+                    {
+                        ManufactorerDevices.Add(DeviceItem);
+                    }
+                }
+            }
+
+            return ManufactorerDevices;
+        }
+
+        // Color Display Data Function
+        private List<Device> ColorFilter()
+        {
+            List<Device> ColorDevices = new List<Device>();
+
+            foreach (string ColorItem in ColorCheckedListBox.CheckedItems)
+            {
+                foreach (var DeviceItem in FilteredDevices)
+                {
+                    ColorItemCheck(ColorDevices, ColorItem, DeviceItem);
+                }
+            }
+
+            return ColorDevices;
+        }
+
+        private void ColorItemCheck(List<Device> ColorDevices, string ColorItem, Device DeviceItem)
+        {
+            if (ColorItem == DeviceItem.Color)
+            {
+                ColorDevices.Add(DeviceItem);
+            }
+        }
+
         // Price Display Data Function
         private List<Device> PriceFilter()
         {
@@ -320,19 +295,9 @@ namespace Cryotech_Catalog
                 PriceTo = Convert.ToInt32(PriceToTextBox.Text);
             }
 
-            if (FilteredDevices.Count != 0)
+            foreach (var DeviceItem in FilteredDevices)
             {
-                foreach (var DeviceItem in FilteredDevices)
-                {
-                    PriceItemCheck(PriceDevices, DeviceItem, PriceFrom, PriceTo);
-                }
-            }
-            else
-            {
-                foreach (var DeviceItem in Devices)
-                {
-                    PriceItemCheck(PriceDevices, DeviceItem, PriceFrom, PriceTo);
-                }
+                PriceItemCheck(PriceDevices, DeviceItem, PriceFrom, PriceTo);
             }
 
             return PriceDevices;
@@ -360,6 +325,26 @@ namespace Cryotech_Catalog
                 {
                     PriceDevices.Add(DeviceItem);
                 }
+            }
+        }
+
+        private void PriceFromTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex PriceFromRegexFormat = new Regex("^([1-9][0-9]*)$");
+            if (!PriceFromRegexFormat.IsMatch(PriceFromTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only numbers and don't starts from zero", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void PriceToTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex PriceToRegexFormat = new Regex("^([1-9][0-9]*)$");
+            if (!PriceToRegexFormat.IsMatch(PriceToTextBox.Text))
+            {
+                e.Cancel = true;
+                MetroFramework.MetroMessageBox.Show(this, "\nThis field should contain only numbers and don't starts from zero", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
