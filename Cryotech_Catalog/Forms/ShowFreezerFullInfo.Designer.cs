@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowFreezerFullInfo));
             this.FreezerFeaturesInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.IceGeneratorInfoLabel = new MetroFramework.Controls.MetroLabel();
             this.FastFreezingInfoLabel = new MetroFramework.Controls.MetroLabel();
@@ -674,6 +675,7 @@
             this.Controls.Add(this.FreezerPictureBox);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.NameInfoLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ShowFreezerFullInfo";
             this.Resizable = false;

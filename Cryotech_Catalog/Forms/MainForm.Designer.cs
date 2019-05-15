@@ -50,6 +50,7 @@
             this.DeviceTotalNumberInfoLabel = new MetroFramework.Controls.MetroLabel();
             this.DisplayedDevicesInfoLabel = new MetroFramework.Controls.MetroLabel();
             this.DisplayedDevicesLabel = new MetroFramework.Controls.MetroLabel();
+            this.FiltersUpdateButton = new MetroFramework.Controls.MetroButton();
             this.DeviceFilterGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,9 +119,9 @@
             this.DeviceFilterGroupBox.Controls.Add(this.FilterManufacturerLabel);
             this.DeviceFilterGroupBox.Controls.Add(this.FilterDeviceTypeLabel);
             this.DeviceFilterGroupBox.Controls.Add(this.DeviceTypeCheckedListBox);
-            this.DeviceFilterGroupBox.Location = new System.Drawing.Point(24, 96);
+            this.DeviceFilterGroupBox.Location = new System.Drawing.Point(24, 132);
             this.DeviceFilterGroupBox.Name = "DeviceFilterGroupBox";
-            this.DeviceFilterGroupBox.Size = new System.Drawing.Size(267, 529);
+            this.DeviceFilterGroupBox.Size = new System.Drawing.Size(267, 493);
             this.DeviceFilterGroupBox.TabIndex = 10;
             this.DeviceFilterGroupBox.TabStop = false;
             // 
@@ -131,7 +132,7 @@
             this.ColorCheckedListBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ColorCheckedListBox.ForeColor = System.Drawing.Color.Black;
             this.ColorCheckedListBox.FormattingEnabled = true;
-            this.ColorCheckedListBox.Location = new System.Drawing.Point(7, 399);
+            this.ColorCheckedListBox.Location = new System.Drawing.Point(5, 357);
             this.ColorCheckedListBox.Name = "ColorCheckedListBox";
             this.ColorCheckedListBox.Size = new System.Drawing.Size(255, 112);
             this.ColorCheckedListBox.TabIndex = 104;
@@ -140,7 +141,7 @@
             // 
             this.FilterColorLabel.AutoSize = true;
             this.FilterColorLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.FilterColorLabel.Location = new System.Drawing.Point(8, 371);
+            this.FilterColorLabel.Location = new System.Drawing.Point(8, 329);
             this.FilterColorLabel.Name = "FilterColorLabel";
             this.FilterColorLabel.Size = new System.Drawing.Size(58, 25);
             this.FilterColorLabel.TabIndex = 103;
@@ -162,7 +163,7 @@
             this.PriceToTextBox.CustomButton.Visible = false;
             this.PriceToTextBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.PriceToTextBox.Lines = new string[0];
-            this.PriceToTextBox.Location = new System.Drawing.Point(147, 149);
+            this.PriceToTextBox.Location = new System.Drawing.Point(147, 138);
             this.PriceToTextBox.MaxLength = 32767;
             this.PriceToTextBox.Name = "PriceToTextBox";
             this.PriceToTextBox.PasswordChar = '\0';
@@ -196,7 +197,7 @@
             this.PriceFromTextBox.CustomButton.Visible = false;
             this.PriceFromTextBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.PriceFromTextBox.Lines = new string[0];
-            this.PriceFromTextBox.Location = new System.Drawing.Point(6, 149);
+            this.PriceFromTextBox.Location = new System.Drawing.Point(6, 138);
             this.PriceFromTextBox.MaxLength = 32767;
             this.PriceFromTextBox.Name = "PriceFromTextBox";
             this.PriceFromTextBox.PasswordChar = '\0';
@@ -218,7 +219,7 @@
             // 
             this.FilterPriceDashLabel.AutoSize = true;
             this.FilterPriceDashLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.FilterPriceDashLabel.Location = new System.Drawing.Point(120, 147);
+            this.FilterPriceDashLabel.Location = new System.Drawing.Point(120, 136);
             this.FilterPriceDashLabel.Name = "FilterPriceDashLabel";
             this.FilterPriceDashLabel.Size = new System.Drawing.Size(29, 25);
             this.FilterPriceDashLabel.TabIndex = 100;
@@ -228,7 +229,7 @@
             // 
             this.FilterPriceLabel.AutoSize = true;
             this.FilterPriceLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.FilterPriceLabel.Location = new System.Drawing.Point(5, 122);
+            this.FilterPriceLabel.Location = new System.Drawing.Point(5, 111);
             this.FilterPriceLabel.Name = "FilterPriceLabel";
             this.FilterPriceLabel.Size = new System.Drawing.Size(53, 25);
             this.FilterPriceLabel.TabIndex = 15;
@@ -241,7 +242,7 @@
             this.ManufactorerCheckedListBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ManufactorerCheckedListBox.ForeColor = System.Drawing.Color.Black;
             this.ManufactorerCheckedListBox.FormattingEnabled = true;
-            this.ManufactorerCheckedListBox.Location = new System.Drawing.Point(5, 231);
+            this.ManufactorerCheckedListBox.Location = new System.Drawing.Point(5, 209);
             this.ManufactorerCheckedListBox.Name = "ManufactorerCheckedListBox";
             this.ManufactorerCheckedListBox.Size = new System.Drawing.Size(255, 112);
             this.ManufactorerCheckedListBox.TabIndex = 14;
@@ -250,7 +251,7 @@
             // 
             this.FilterManufacturerLabel.AutoSize = true;
             this.FilterManufacturerLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.FilterManufacturerLabel.Location = new System.Drawing.Point(5, 203);
+            this.FilterManufacturerLabel.Location = new System.Drawing.Point(5, 181);
             this.FilterManufacturerLabel.Name = "FilterManufacturerLabel";
             this.FilterManufacturerLabel.Size = new System.Drawing.Size(119, 25);
             this.FilterManufacturerLabel.TabIndex = 13;
@@ -260,7 +261,7 @@
             // 
             this.FilterDeviceTypeLabel.AutoSize = true;
             this.FilterDeviceTypeLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.FilterDeviceTypeLabel.Location = new System.Drawing.Point(6, 16);
+            this.FilterDeviceTypeLabel.Location = new System.Drawing.Point(6, 14);
             this.FilterDeviceTypeLabel.Name = "FilterDeviceTypeLabel";
             this.FilterDeviceTypeLabel.Size = new System.Drawing.Size(105, 25);
             this.FilterDeviceTypeLabel.TabIndex = 12;
@@ -276,7 +277,7 @@
             this.DeviceTypeCheckedListBox.Items.AddRange(new object[] {
             "Fridge",
             "Freezer"});
-            this.DeviceTypeCheckedListBox.Location = new System.Drawing.Point(6, 44);
+            this.DeviceTypeCheckedListBox.Location = new System.Drawing.Point(6, 42);
             this.DeviceTypeCheckedListBox.Name = "DeviceTypeCheckedListBox";
             this.DeviceTypeCheckedListBox.Size = new System.Drawing.Size(255, 56);
             this.DeviceTypeCheckedListBox.TabIndex = 0;
@@ -293,9 +294,9 @@
             // 
             // FiltersApplyButton
             // 
-            this.FiltersApplyButton.Location = new System.Drawing.Point(183, 73);
+            this.FiltersApplyButton.Location = new System.Drawing.Point(161, 103);
             this.FiltersApplyButton.Name = "FiltersApplyButton";
-            this.FiltersApplyButton.Size = new System.Drawing.Size(108, 23);
+            this.FiltersApplyButton.Size = new System.Drawing.Size(130, 23);
             this.FiltersApplyButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.FiltersApplyButton.TabIndex = 12;
             this.FiltersApplyButton.Text = "Apply";
@@ -343,11 +344,24 @@
             this.DisplayedDevicesLabel.TabIndex = 15;
             this.DisplayedDevicesLabel.Text = "Displayed Devices:";
             // 
+            // FiltersUpdateButton
+            // 
+            this.FiltersUpdateButton.Location = new System.Drawing.Point(25, 103);
+            this.FiltersUpdateButton.Name = "FiltersUpdateButton";
+            this.FiltersUpdateButton.Size = new System.Drawing.Size(130, 23);
+            this.FiltersUpdateButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.FiltersUpdateButton.TabIndex = 17;
+            this.FiltersUpdateButton.Text = "Update";
+            this.FiltersUpdateButton.UseSelectable = true;
+            this.FiltersUpdateButton.UseStyleColors = true;
+            this.FiltersUpdateButton.Click += new System.EventHandler(this.FiltersUpdateButton_Click);
+            // 
             // CryotechMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1250, 650);
+            this.Controls.Add(this.FiltersUpdateButton);
             this.Controls.Add(this.DisplayedDevicesInfoLabel);
             this.Controls.Add(this.DisplayedDevicesLabel);
             this.Controls.Add(this.DeviceTotalNumberInfoLabel);
@@ -394,6 +408,7 @@
         private MetroFramework.Controls.MetroLabel DeviceTotalNumberInfoLabel;
         private MetroFramework.Controls.MetroLabel DisplayedDevicesInfoLabel;
         private MetroFramework.Controls.MetroLabel DisplayedDevicesLabel;
+        private MetroFramework.Controls.MetroButton FiltersUpdateButton;
     }
 }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewFreezer));
             this.CurrentPictureInfoLabel = new MetroFramework.Controls.MetroLabel();
             this.UploadPictureButton = new MetroFramework.Controls.MetroButton();
             this.CurrentPictureLabel = new MetroFramework.Controls.MetroLabel();
@@ -1269,6 +1270,7 @@
             this.Controls.Add(this.ExtraInfoGroupBox);
             this.Controls.Add(this.BasicInfoGroupBox);
             this.Controls.Add(this.CurrentPictureLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AddNewFreezer";
             this.Resizable = false;

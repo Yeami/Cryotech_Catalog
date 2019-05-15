@@ -40,6 +40,8 @@ namespace Cryotech_Catalog
                     DisplayFridgeDevice(NewFridge);
                 }
             }
+            DeviceTotalNumberInfoLabel.Text = Convert.ToString(Devices.Count());
+            DisplayedDevicesInfoLabel.Text = Convert.ToString(DeviceViewPanel.Controls.Count);
         }
 
         private void AddFreezerTile_Click(object sender, EventArgs e)
@@ -55,6 +57,8 @@ namespace Cryotech_Catalog
                     DisplayFreezerDevice(NewFreezer);
                 }
             }
+            DeviceTotalNumberInfoLabel.Text = Convert.ToString(Devices.Count());
+            DisplayedDevicesInfoLabel.Text = Convert.ToString(DeviceViewPanel.Controls.Count);
         }
 
         private void SaveDataTile_Click(object sender, EventArgs e)
@@ -81,7 +85,7 @@ namespace Cryotech_Catalog
                     DisplayDevices(Devices);
 
                     DeviceTotalNumberInfoLabel.Text = Convert.ToString(Devices.Count());
-                    DisplayedDevicesInfoLabel.Text = Convert.ToString(Devices.Count());
+                    DisplayedDevicesInfoLabel.Text = Convert.ToString(DeviceViewPanel.Controls.Count);
                 }
                 catch (Exception)
                 {
@@ -134,6 +138,11 @@ namespace Cryotech_Catalog
         {
             FreezerTemplate FreezerUserControl = new FreezerTemplate(NewFreezer);
             DeviceViewPanel.Controls.Add(FreezerUserControl);
+        }
+
+        private void FiltersUpdateButton_Click(object sender, EventArgs e)
+        {
+            AddNewDataToCheckedListBoxes();
         }
 
         private void FiltersApplyButton_Click(object sender, EventArgs e)

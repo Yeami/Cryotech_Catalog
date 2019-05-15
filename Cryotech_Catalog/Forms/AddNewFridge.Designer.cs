@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewFridge));
             this.ManufacturerLabel = new MetroFramework.Controls.MetroLabel();
             this.ManufacturerTextBox = new MetroFramework.Controls.MetroTextBox();
             this.NameTextBox = new MetroFramework.Controls.MetroTextBox();
@@ -1176,6 +1177,7 @@
             this.Controls.Add(this.FridgeInfoGroupBox);
             this.Controls.Add(this.ExtraInfoGroupBox);
             this.Controls.Add(this.BasicInfoGroupBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AddNewFridge";
             this.Resizable = false;
