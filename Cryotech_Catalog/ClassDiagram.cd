@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Cryotech_Catalog.Classes.Device">
+    <Position X="3.25" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AEgkggAABQAIAAAAAAAAgUQACKgAAAAgQAAAgAQAAIA=</HashCode>
+      <FileName>Classes\Device.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Cryotech_Catalog.Classes.Freezer">
+    <Position X="2" Y="7" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAQIAAEARAAgAAAAAIAAAAABAAAAAAAIAAA=</HashCode>
+      <FileName>Classes\Freezer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cryotech_Catalog.Classes.Fridge">
+    <Position X="5" Y="7" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAgACAAAACAAIAACAAAKAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Fridge.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cryotech_Catalog.AddNewFreezer" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EFkgUGQGACBSYwhcJIDaIWGjoACDwECBMQ0gDMoAIAQ=</HashCode>
+      <FileName>Forms\AddNewFreezer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cryotech_Catalog.AddNewFridge" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FEkkUWAGECASAggcSIHYIGGj5ICRAkCJdQkgDMpAIEQ=</HashCode>
+      <FileName>Forms\AddNewFridge.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cryotech_Catalog.FridgeTemplate" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAghwEAAECAECAAAMECAEIACBABAAAgKRCgAAIRAAAw=</HashCode>
+      <FileName>Forms\FridgeTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cryotech_Catalog.CryotechMainForm" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAABAAhzBAABAggICCQQUGQFIAgABAQLRAAJAAIAA=</HashCode>
+      <FileName>Forms\MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cryotech_Catalog.ShowFridgeFullInfo" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FAgQcEAAEKAwAiAYEgCMEAACgCBAQMiJVzoAAMhAIAw=</HashCode>
+      <FileName>Forms\ShowFridgeFullInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cryotech_Catalog.Program" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cryotech_Catalog.Forms.FreezerTemplate" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAgpQEAAACAUCAAANECAAKACgABAAIgAAyggAIRAAAQ=</HashCode>
+      <FileName>Forms\FreezerTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cryotech_Catalog.Forms.ShowFreezerFullInfo" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EFgRMFCABKBwAgAYEgCMAAAigCBgQMiBAz8gCMhAIAQ=</HashCode>
+      <FileName>Forms\ShowFreezerFullInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cryotech_Catalog.Properties.Resources" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cryotech_Catalog.Properties.Settings" Collapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Cryotech_Catalog.Classes.IFeatures">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AEAAAgAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Classes\IFeatures.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Cryotech_Catalog.Classes.InstallationMethodType">
+    <Position X="12" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Classes\Device.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Cryotech_Catalog.Classes.ControlType">
+    <Position X="13.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Device.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Cryotech_Catalog.Classes.FreezerType">
+    <Position X="15.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Classes\Freezer.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Cryotech_Catalog.Classes.FridgeType">
+    <Position X="15.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAIAAAAAAAAAAAAAAAAAAAACAgAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Fridge.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Cryotech_Catalog.Classes.CompressorType">
+    <Position X="13.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgCAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Classes\Fridge.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Cryotech_Catalog.Classes.FreezerLocationType">
+    <Position X="17.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIBAAAAAAAAAAAAAAAAAAAQAAAAAAAAAIAAA=</HashCode>
+      <FileName>Classes\Fridge.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Cryotech_Catalog.Classes.EnergyClassType">
+    <Position X="12" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAgIAAIAAAAAA=</HashCode>
+      <FileName>Classes\IFeatures.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
